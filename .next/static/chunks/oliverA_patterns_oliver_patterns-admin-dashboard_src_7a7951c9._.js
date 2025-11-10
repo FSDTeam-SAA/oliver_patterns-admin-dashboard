@@ -214,7 +214,8 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/lib/contactApi.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-/* eslint-disable @typescript-eslint/no-explicit-any */ __turbopack_context__.s([
+// ==================== FILE: lib/contactApi.ts ====================
+__turbopack_context__.s([
     "useDeleteContact",
     ()=>useDeleteContact,
     "useGetContacts",
@@ -225,20 +226,12 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     ()=>useUpdateContactStatus
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/@tanstack/react-query/build/modern/useMutation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useQuery$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/@tanstack/react-query/build/modern/useQuery.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/@tanstack/react-query/build/modern/useMutation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js [app-client] (ecmascript)");
 var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature(), _s2 = __turbopack_context__.k.signature(), _s3 = __turbopack_context__.k.signature();
 ;
-const API_BASE_URL = ("TURBOPACK compile-time value", "http://localhost:5000/api/v1") || 'http://localhost:5000/api/v1';
-// Helper to handle responses
-async function handleResponse(response) {
-    if (!response.ok) {
-        const error = await response.json().catch(()=>({}));
-        throw new Error(error.message || 'Something went wrong');
-    }
-    return response.json();
-}
+const API_BASE_URL = ("TURBOPACK compile-time value", "http://localhost:5000/api/v1") || 'http://localhost:3000/api';
 const useGetContacts = function(accessToken) {
     let page = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 1, limit = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : 10;
     _s();
@@ -246,18 +239,17 @@ const useGetContacts = function(accessToken) {
         queryKey: [
             'contacts',
             page,
-            limit,
-            accessToken
+            limit
         ],
         queryFn: {
             "useGetContacts.useQuery": async ()=>{
-                const res = await fetch("".concat(API_BASE_URL, "/contracts?page=").concat(page, "&limit=5"), {
-                    credentials: 'include',
+                const response = await fetch("".concat(API_BASE_URL, "/contacts?page=").concat(page, "&limit=").concat(limit), {
                     headers: {
                         Authorization: "Bearer ".concat(accessToken)
                     }
                 });
-                return handleResponse(res);
+                if (!response.ok) throw new Error('Failed to fetch contacts');
+                return response.json();
             }
         }["useGetContacts.useQuery"],
         enabled: !!accessToken
@@ -273,22 +265,20 @@ const useGetSingleContact = (contactId, accessToken)=>{
     return (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useQuery$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQuery"])({
         queryKey: [
             'contact',
-            contactId,
-            accessToken
+            contactId
         ],
         queryFn: {
             "useGetSingleContact.useQuery": async ()=>{
-                if (!contactId) return null;
-                const res = await fetch("".concat(API_BASE_URL, "/contracts/").concat(contactId), {
-                    credentials: 'include',
+                const response = await fetch("".concat(API_BASE_URL, "/contacts/").concat(contactId), {
                     headers: {
                         Authorization: "Bearer ".concat(accessToken)
                     }
                 });
-                return handleResponse(res);
+                if (!response.ok) throw new Error('Failed to fetch contact');
+                return response.json();
             }
         }["useGetSingleContact.useQuery"],
-        enabled: !!contactId && !!accessToken
+        enabled: !!accessToken && !!contactId
     });
 };
 _s1(useGetSingleContact, "4ZpngI1uv+Uo3WQHEZmTQ5FNM+k=", false, function() {
@@ -296,71 +286,20 @@ _s1(useGetSingleContact, "4ZpngI1uv+Uo3WQHEZmTQ5FNM+k=", false, function() {
         __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useQuery$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQuery"]
     ];
 });
-const useUpdateContactStatus = (accessToken, options)=>{
+const useDeleteContact = (accessToken)=>{
     _s2();
     const queryClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"])();
     return (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"])({
         mutationFn: {
-            "useUpdateContactStatus.useMutation": async (param)=>{
-                let { contactId, responseMessage } = param;
-                const res = await fetch("".concat(API_BASE_URL, "/contracts/").concat(contactId), {
-                    method: 'PUT',
-                    credentials: 'include',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization: "Bearer ".concat(accessToken)
-                    },
-                    body: JSON.stringify({
-                        responseMessage
-                    })
-                });
-                return handleResponse(res);
-            }
-        }["useUpdateContactStatus.useMutation"],
-        onSuccess: {
-            "useUpdateContactStatus.useMutation": ()=>{
-                var _options_onSuccess;
-                queryClient.invalidateQueries({
-                    queryKey: [
-                        'contacts'
-                    ]
-                });
-                queryClient.invalidateQueries({
-                    queryKey: [
-                        'contact'
-                    ]
-                });
-                options === null || options === void 0 ? void 0 : (_options_onSuccess = options.onSuccess) === null || _options_onSuccess === void 0 ? void 0 : _options_onSuccess.call(options);
-            }
-        }["useUpdateContactStatus.useMutation"],
-        onError: {
-            "useUpdateContactStatus.useMutation": (error)=>{
-                var _options_onError;
-                options === null || options === void 0 ? void 0 : (_options_onError = options.onError) === null || _options_onError === void 0 ? void 0 : _options_onError.call(options, error);
-            }
-        }["useUpdateContactStatus.useMutation"]
-    });
-};
-_s2(useUpdateContactStatus, "YK0wzM21ECnncaq5SECwU+/SVdQ=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"],
-        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"]
-    ];
-});
-const useDeleteContact = (accessToken)=>{
-    _s3();
-    const queryClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"])();
-    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"])({
-        mutationFn: {
             "useDeleteContact.useMutation": async (contactId)=>{
-                const res = await fetch("".concat(API_BASE_URL, "/contracts/").concat(contactId), {
+                const response = await fetch("".concat(API_BASE_URL, "/contacts/").concat(contactId), {
                     method: 'DELETE',
-                    credentials: 'include',
                     headers: {
                         Authorization: "Bearer ".concat(accessToken)
                     }
                 });
-                return handleResponse(res);
+                if (!response.ok) throw new Error('Failed to delete contact');
+                return response.json();
             }
         }["useDeleteContact.useMutation"],
         onSuccess: {
@@ -374,7 +313,47 @@ const useDeleteContact = (accessToken)=>{
         }["useDeleteContact.useMutation"]
     });
 };
-_s3(useDeleteContact, "YK0wzM21ECnncaq5SECwU+/SVdQ=", false, function() {
+_s2(useDeleteContact, "YK0wzM21ECnncaq5SECwU+/SVdQ=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"]
+    ];
+});
+const useUpdateContactStatus = (accessToken, // eslint-disable-next-line @typescript-eslint/no-explicit-any
+options)=>{
+    _s3();
+    const queryClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"])();
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"])({
+        mutationFn: {
+            "useUpdateContactStatus.useMutation": async (param)=>{
+                let { contactId, responseMessage } = param;
+                const response = await fetch("".concat(API_BASE_URL, "/contacts/").concat(contactId, "/respond"), {
+                    method: 'PATCH',
+                    headers: {
+                        Authorization: "Bearer ".concat(accessToken),
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        responseMessage
+                    })
+                });
+                if (!response.ok) throw new Error('Failed to update contact status');
+                return response.json();
+            }
+        }["useUpdateContactStatus.useMutation"],
+        onSuccess: {
+            "useUpdateContactStatus.useMutation": ()=>{
+                queryClient.invalidateQueries({
+                    queryKey: [
+                        'contacts'
+                    ]
+                });
+            }
+        }["useUpdateContactStatus.useMutation"],
+        ...options
+    });
+};
+_s3(useUpdateContactStatus, "YK0wzM21ECnncaq5SECwU+/SVdQ=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"],
         __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"]

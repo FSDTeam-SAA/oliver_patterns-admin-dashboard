@@ -17,18 +17,22 @@ export default function UserHeader() {
       ]
     if (pathname.includes('/admin-dashboard/grant-management'))
       return ['Grants Management', 'Manage all grants in the system']
+
     if (pathname.includes('/admin-dashboard/user-management'))
       return [
         'User Management',
         'Manage all users and their subscription details',
       ]
+
     if (pathname.includes('/admin-dashboard/subscription-management'))
-      return ['Subscription Management', 'Manage your contact messages']
-    if (pathname.includes('/admin-dashboard/contact-messages'))
       return [
-        'Contact Messages',
+        'Subscription Management',
         'Manage subscription plans and view transaction history',
       ]
+
+    if (pathname.includes('/admin-dashboard/contact-management'))
+      return ['Contact Management', 'Manage your contact messages ']
+
     if (pathname.includes('/admin-dashboard/settings'))
       return [
         'Settings',

@@ -111,7 +111,7 @@ export default function UserTable({
       {/* Table */}
       <div className="overflow-x-auto">
         <table className="w-full">
-          <thead className="bg-blue-100 border-b">
+          <thead className="bg-blue-100 border-b ">
             <tr>
               <th className="px-6 py-4 text-left text-sm font-medium text-gray-500 uppercase">
                 Name

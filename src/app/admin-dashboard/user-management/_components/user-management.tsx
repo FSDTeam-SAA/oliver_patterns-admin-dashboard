@@ -68,13 +68,13 @@ export default function UserManagement() {
                 </span>
               </div>
             </div> */}
-            <Button
+            {/* <Button
               onClick={handleAddUser}
               className="h-11 px-6 flex items-center gap-2 bg-[#5A8DEE] hover:bg-[#4A7DD8]"
             >
               <Plus className="w-4 h-4" />
               Add New User
-            </Button>
+            </Button> */}
           </div>
         </div>
 

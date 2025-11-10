@@ -46,7 +46,7 @@ export function ProfileForm({
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             placeholder="Enter your full name"
-            className="mt-1"
+            className="mt-1 bg-[#EDF2F6]"
           />
         </div>
 
@@ -56,7 +56,7 @@ export function ProfileForm({
             id="email"
             value={email}
             disabled
-            className="mt-1 bg-gray-100 cursor-not-allowed"
+            className="mt-1 bg-[#EDF2F6] cursor-not-allowed"
           />
         </div>
 
@@ -69,7 +69,7 @@ export function ProfileForm({
             placeholder="Enter your username"
             readOnly
             disabled
-            className="mt-1"
+            className="mt-1 bg-[#EDF2F6]"
           />
         </div>
 
@@ -80,7 +80,7 @@ export function ProfileForm({
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder="+1 (555) 000-0000"
-            className="mt-1"
+            className="mt-1 bg-[#EDF2F6]"
           />
         </div>
       </div>
@@ -92,7 +92,7 @@ export function ProfileForm({
           value={bio}
           onChange={(e) => setBio(e.target.value)}
           placeholder="Write your bio here"
-          className="mt-1 min-h-[100px]"
+          className="mt-1 min-h-[100px] bg-[#EDF2F6]"
         />
       </div>
 

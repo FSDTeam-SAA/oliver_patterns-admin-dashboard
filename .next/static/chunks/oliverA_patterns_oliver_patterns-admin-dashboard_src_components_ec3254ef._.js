@@ -224,7 +224,7 @@ const sidebarItems = [
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         text: 'User Management',
-        href: '/admin-dashboard/service-management'
+        href: '/admin-dashboard/user-management'
     },
     {
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Bell$3e$__["Bell"], {
@@ -432,11 +432,11 @@ function UserHeader() {
         ];
         if (pathname.includes('/admin-dashboard/subscription-management')) return [
             'Subscription Management',
-            'Manage your contact messages'
-        ];
-        if (pathname.includes('/admin-dashboard/contact-messages')) return [
-            'Contact Messages',
             'Manage subscription plans and view transaction history'
+        ];
+        if (pathname.includes('/admin-dashboard/contact-management')) return [
+            'Contact Management',
+            'Manage your contact messages '
         ];
         if (pathname.includes('/admin-dashboard/settings')) return [
             'Settings',
@@ -456,7 +456,7 @@ function UserHeader() {
                 children: title
             }, void 0, false, {
                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/components/reusable/UserHeader.tsx",
-                lineNumber: 45,
+                lineNumber: 49,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -464,13 +464,13 @@ function UserHeader() {
                 children: description
             }, void 0, false, {
                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/components/reusable/UserHeader.tsx",
-                lineNumber: 46,
+                lineNumber: 50,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/components/reusable/UserHeader.tsx",
-        lineNumber: 44,
+        lineNumber: 48,
         columnNumber: 5
     }, this);
 }

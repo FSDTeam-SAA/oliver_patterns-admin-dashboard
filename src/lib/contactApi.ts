@@ -1,95 +1,89 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+// ==================== FILE: lib/contactApi.ts ====================
+/*
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  UseMutationOptions,
+} from '@tanstack/react-query'
+import { Contact, ContactsResponse } from '../../types/contact'
 
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1'
+  process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api'
 
-// Types
-export interface Contact {
-  _id: string
-  fullName: string
-  email: string
-  phoneNumber: string
-  occupation: string
-  message: string
-  status: 'New' | 'Respond'
-  createdAt: string
-  updatedAt: string
-}
-
-export interface ContactsResponse {
-  status: boolean
-  message: string
-  data: {
-    contracts: Contact[]
-    pagination: {
-      currentPage: number
-      totalPages: number
-      totalData: number
-      hasNextPage: boolean
-      hasPrevPage: boolean
-    }
-  }
-}
-
-export interface SingleContactResponse {
-  status: boolean
-  message: string
-  data: Contact
-}
-
-// Helper to handle responses
-async function handleResponse(response: Response) {
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({}))
-    throw new Error(error.message || 'Something went wrong')
-  }
-  return response.json()
-}
-
-// ==================== GET ALL CONTACTS ====================
-export const useGetContacts = (accessToken: string, page = 1, limit = 10) => {
+// Fetch all contacts with pagination
+export const useGetContacts = (
+  accessToken: string,
+  page: number = 1,
+  limit: number = 10
+) => {
   return useQuery<ContactsResponse>({
-    queryKey: ['contacts', page, limit, accessToken],
+    queryKey: ['contacts', page, limit],
     queryFn: async () => {
-      const res = await fetch(
-        `${API_BASE_URL}/contracts?page=${page}&limit=5`,
+      const response = await fetch(
+        `${API_BASE_URL}/contacts?page=${page}&limit=${limit}`,
         {
-          credentials: 'include',
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
         }
       )
-      return handleResponse(res)
+      if (!response.ok) throw new Error('Failed to fetch contacts')
+      return response.json()
     },
     enabled: !!accessToken,
   })
 }
 
-// ==================== GET SINGLE CONTACT ====================
-export const useGetSingleContact = (
-  contactId?: string,
-  accessToken?: string
-) => {
-  return useQuery<SingleContactResponse>({
-    queryKey: ['contact', contactId, accessToken],
+// Fetch single contact
+export const useGetSingleContact = (contactId: string, accessToken: string) => {
+  return useQuery<{ contact: Contact }>({
+    queryKey: ['contact', contactId],
     queryFn: async () => {
-      if (!contactId) return null
-      const res = await fetch(`${API_BASE_URL}/contracts/${contactId}`, {
-        credentials: 'include',
+      const response = await fetch(`${API_BASE_URL}/contacts/${contactId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
       })
-      return handleResponse(res)
+      if (!response.ok) throw new Error('Failed to fetch contact')
+      return response.json()
     },
-    enabled: !!contactId && !!accessToken,
+    enabled: !!accessToken && !!contactId,
   })
 }
 
-// ==================== UPDATE CONTACT STATUS ====================
-export const useUpdateContactStatus = (accessToken: string, options?: any) => {
+// Delete contact
+export const useDeleteContact = (accessToken: string) => {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: async (contactId: string) => {
+      const response = await fetch(`${API_BASE_URL}/contacts/${contactId}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      })
+      if (!response.ok) throw new Error('Failed to delete contact')
+      return response.json()
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['contacts'] })
+    },
+  })
+}
+
+// Update contact status (respond to contact)
+export const useUpdateContactStatus = (
+  accessToken: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  options?: UseMutationOptions<
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    any,
+    Error,
+    { contactId: string; responseMessage: string }
+  >
+) => {
   const queryClient = useQueryClient()
 
   return useMutation({
@@ -100,45 +94,24 @@ export const useUpdateContactStatus = (accessToken: string, options?: any) => {
       contactId: string
       responseMessage: string
     }) => {
-      const res = await fetch(`${API_BASE_URL}/contracts/${contactId}`, {
-        method: 'PUT',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: JSON.stringify({ responseMessage }),
-      })
-      return handleResponse(res)
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['contacts'] })
-      queryClient.invalidateQueries({ queryKey: ['contact'] })
-      options?.onSuccess?.()
-    },
-    onError: (error) => {
-      options?.onError?.(error)
-    },
-  })
-}
-
-// ==================== DELETE CONTACT ====================
-export const useDeleteContact = (accessToken: string) => {
-  const queryClient = useQueryClient()
-
-  return useMutation({
-    mutationFn: async (contactId: string) => {
-      const res = await fetch(`${API_BASE_URL}/contracts/${contactId}`, {
-        method: 'DELETE',
-        credentials: 'include',
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      })
-      return handleResponse(res)
+      const response = await fetch(
+        `${API_BASE_URL}/contacts/${contactId}/respond`,
+        {
+          method: 'PATCH',
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ responseMessage }),
+        }
+      )
+      if (!response.ok) throw new Error('Failed to update contact status')
+      return response.json()
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['contacts'] })
     },
+    ...options,
   })
 }
+*/

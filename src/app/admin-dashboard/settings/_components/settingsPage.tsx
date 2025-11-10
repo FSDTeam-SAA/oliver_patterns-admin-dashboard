@@ -167,7 +167,7 @@ export default function SettingsPage() {
   }
 
   return (
-    <div className="container mx-auto py-6">
+    <div className="">
       {/* <div className="mb-5">
         <h1 className="text-3xl font-bold text-[#5A8DEE] mb-2">Settings</h1>
         <p className="text-gray-600">
@@ -176,11 +176,11 @@ export default function SettingsPage() {
       </div> */}
 
       <Card className="border-none shadow-none">
-        <CardContent className="py-6">
+        <CardContent className="">
           <div className="flex border-b mb-6">
             <button
               onClick={() => setActiveTab('profile')}
-              className={`px-6 py-3 font-medium transition-colors cursor-pointer ${
+              className={`px-2 py-3 font-medium transition-colors cursor-pointer ${
                 activeTab === 'profile'
                   ? 'text-blue-600 border-b-2 border-blue-600'
                   : 'text-gray-600 hover:text-gray-900'
@@ -190,7 +190,7 @@ export default function SettingsPage() {
             </button>
             <button
               onClick={() => setActiveTab('password')}
-              className={`px-6 py-3 font-medium transition-colors cursor-pointer ${
+              className={`px-2 py-3 font-medium transition-colors cursor-pointer ${
                 activeTab === 'password'
                   ? 'text-blue-600 border-b-2 border-blue-600'
                   : 'text-gray-600 hover:text-gray-900'

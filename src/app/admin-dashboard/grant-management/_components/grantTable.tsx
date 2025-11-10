@@ -142,11 +142,11 @@ export default function GrantTable({
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200 text-center">
+          <tbody className="bg-white divide-y divide-gray-200 text-center text-[#343A40]">
             {grants.map((grant) => (
               <tr
                 key={grant._id}
-                className="hover:bg-gray-50 transition-colors"
+                className="hover:bg-gray-50 transition-colors "
               >
                 {/* Serial Number */}
                 {/* <td className="px-6 py-4 text-sm text-gray-900">

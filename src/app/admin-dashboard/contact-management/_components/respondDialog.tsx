@@ -1,3 +1,4 @@
+// ==================== FILE: app/admin-dashboard/contact-management/_components/RespondDialog.tsx ====================
 'use client'
 
 import React, { useState } from 'react'
@@ -13,15 +14,15 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { Loader2 } from 'lucide-react'
-import { Contact, useUpdateContactStatus } from '@/lib/contactApi'
+
 import { toast } from 'sonner'
+import { Contact } from '../../../../../types/contact'
 
 interface RespondDialogProps {
   contact: Contact | null
   isOpen: boolean
   onClose: () => void
-  onSuccess: () => void
-  accessToken: string
+  onSuccess: (contactId: string) => void
 }
 
 export default function RespondDialog({
@@ -29,27 +30,12 @@ export default function RespondDialog({
   isOpen,
   onClose,
   onSuccess,
-  accessToken,
 }: RespondDialogProps) {
   const [responseMessage, setResponseMessage] = useState('')
   const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
-  const { mutate: updateStatus, isPending } = useUpdateContactStatus(
-    accessToken,
-    {
-      onSuccess: () => {
-        setResponseMessage('')
-        setError('')
-        onSuccess()
-        toast.success('Response sent successfully!')
-      },
-      onError: (err: Error) => {
-        setError(err.message || 'Failed to send response')
-      },
-    }
-  )
-
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!responseMessage.trim()) {
       setError('Please enter a response message')
       return
@@ -60,14 +46,25 @@ export default function RespondDialog({
       return
     }
 
-    updateStatus({
-      contactId: contact._id,
-      responseMessage: responseMessage.trim(),
-    })
+    setIsLoading(true)
+
+    // Demo: Simulate API call
+    setTimeout(() => {
+      console.log('Response sent:', {
+        contactId: contact._id,
+        responseMessage: responseMessage.trim(),
+      })
+
+      toast.success('Response sent successfully!')
+      setResponseMessage('')
+      setError('')
+      setIsLoading(false)
+      onSuccess(contact._id)
+    }, 1000)
   }
 
   const handleClose = () => {
-    if (!isPending) {
+    if (!isLoading) {
       setResponseMessage('')
       setError('')
       onClose()
@@ -125,7 +122,7 @@ export default function RespondDialog({
                 setError('')
               }}
               className="mt-2 min-h-[120px]"
-              disabled={isPending}
+              disabled={isLoading}
             />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
           </div>
@@ -136,12 +133,12 @@ export default function RespondDialog({
             type="button"
             variant="outline"
             onClick={handleClose}
-            disabled={isPending}
+            disabled={isLoading}
           >
             Cancel
           </Button>
-          <Button onClick={handleSubmit} disabled={isPending}>
-            {isPending ? (
+          <Button onClick={handleSubmit} disabled={isLoading}>
+            {isLoading ? (
               <>
                 <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                 Sending...

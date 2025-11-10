@@ -28,7 +28,7 @@ const sidebarItems = [
   {
     icon: <Users size={20} />,
     text: 'User Management',
-    href: '/admin-dashboard/service-management',
+    href: '/admin-dashboard/user-management',
   },
   {
     icon: <Bell size={20} />,

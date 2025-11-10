@@ -1,16 +1,9 @@
-// ==================== FILE: app/admin-dashboard/grant-management/_components/GrantTable.tsx ====================
+// ==================== FILE: app/admin-dashboard/user-management/_components/UserTable.tsx ====================
 'use client'
 
 import React, { useState } from 'react'
-import {
-  Edit,
-  Trash2,
-  Eye,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-} from 'lucide-react'
-import { Grant } from '../../../../../types/grant'
+import { Trash2, Eye, ChevronLeft, ChevronRight } from 'lucide-react'
+
 import {
   Dialog,
   DialogContent,
@@ -21,12 +14,13 @@ import {
   DialogClose,
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
+import { User } from '../../../../../types/userTypes'
 
-interface GrantTableProps {
-  grants: Grant[]
-  onView: (grant: Grant) => void
-  onEdit: (grant: Grant) => void
-  onDelete: (grantId: string) => void
+interface UserTableProps {
+  users: User[]
+  onView: (user: User) => void
+  onEdit: (user: User) => void
+  onDelete: (userId: string) => void
   isLoading?: boolean
   currentPage: number
   totalPages: number
@@ -36,10 +30,10 @@ interface GrantTableProps {
   onPageChange: (page: number) => void
 }
 
-export default function GrantTable({
-  grants,
+export default function UserTable({
+  users,
   onView,
-  onEdit,
+
   onDelete,
   isLoading,
   currentPage,
@@ -48,19 +42,19 @@ export default function GrantTable({
   hasNextPage,
   hasPrevPage,
   onPageChange,
-}: GrantTableProps) {
-  const [selectedGrant, setSelectedGrant] = useState<Grant | null>(null)
+}: UserTableProps) {
+  const [selectedUser, setSelectedUser] = useState<User | null>(null)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
 
-  const handleDeleteClick = (grant: Grant) => {
-    setSelectedGrant(grant)
+  const handleDeleteClick = (user: User) => {
+    setSelectedUser(user)
     setIsDialogOpen(true)
   }
 
   const handleDeleteConfirm = () => {
-    if (selectedGrant) {
-      onDelete(selectedGrant._id)
-      setSelectedGrant(null)
+    if (selectedUser) {
+      onDelete(selectedUser._id)
+      setSelectedUser(null)
       setIsDialogOpen(false)
     }
   }
@@ -73,11 +67,11 @@ export default function GrantTable({
     )
   }
 
-  if (!grants || grants.length === 0) {
+  if (!users || users.length === 0) {
     return (
       <div className="text-center py-12 text-gray-500 bg-gray-50 rounded-lg">
-        <p className="text-lg">No grants found</p>
-        <p className="text-sm mt-1">Create your first grant to get started</p>
+        <p className="text-lg">No users found</p>
+        <p className="text-sm mt-1">Add your first user to get started</p>
       </div>
     )
   }
@@ -113,106 +107,92 @@ export default function GrantTable({
   }
 
   return (
-    <div className="bg-white rounded-lg border">
+    <div className="bg-white rounded border">
       {/* Table */}
       <div className="overflow-x-auto">
         <table className="w-full">
-          <thead className="bg-blue-100 border-b ">
+          <thead className="bg-blue-100 border-b">
             <tr>
-              {/* <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase">
-                No.
-              </th> */}
-              <th className="px-6 py-4 text-left pl-40 text-sm font-medium text-gray-500 uppercase ">
-                Title
+              <th className="px-6 py-4 text-left text-sm font-medium text-gray-500 uppercase">
+                Name
               </th>
-              <th className="px-6 py-4 text-center text-sm font-medium text-gray-500 uppercase">
-                Type
+              <th className="px-6 py-2 text-center text-sm font-medium text-gray-500 uppercase">
+                Plan Type
               </th>
-              <th className="px-6 py-4 text-center text-sm font-medium text-gray-500 uppercase">
-                Funding
+              <th className="px-6 py-2 text-center text-sm font-medium text-gray-500 uppercase">
+                Joined
               </th>
-              <th className="px-6 py-4 text-center text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-2 text-center text-sm font-medium text-gray-500 uppercase">
+                Last Active
+              </th>
+              <th className="px-6 py-2 text-center text-sm font-medium text-gray-500 uppercase">
                 Status
               </th>
-              <th className="px-6 py-4 text-center text-sm font-medium text-gray-500 uppercase">
-                Deadline
-              </th>
-              <th className="px-6 py-4 text-center text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-2 text-center text-sm font-medium text-gray-500 uppercase">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200 text-center text-[#343A40]">
-            {grants.map((grant) => (
-              <tr
-                key={grant._id}
-                className="hover:bg-gray-50 transition-colors "
-              >
-                {/* Serial Number */}
-                {/* <td className="px-6 py-4 text-sm text-gray-900">
-                  {(currentPage - 1) * 10 + index + 1}
-                </td> */}
-
-                {/* Title */}
-                <td className="px-6 py-4">
-                  <div className="max-w-xs">
-                    <span className="font-medium text-gray-900 line-clamp-2">
-                      {grant.title}
-                    </span>
+          <tbody className="bg-white divide-y divide-gray-200 text-[#343A40]">
+            {users.map((user) => (
+              <tr key={user._id} className="hover:bg-gray-50 transition-colors">
+                {/* Name & Email */}
+                <td className="px-6 py-2.5">
+                  <div>
+                    <p className="font-medium text-gray-900">{user.name}</p>
+                    <p className="text-sm text-gray-500">{user.email}</p>
                   </div>
                 </td>
 
-                {/* Type */}
-                <td className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap">
-                  {grant.type}
+                {/* Plan Type */}
+                <td className="px-6 py-3 text-sm text-gray-600 text-center whitespace-nowrap">
+                  {user.planType}
                 </td>
 
-                {/* Funding */}
-                <td className="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
-                  {grant.funding}
+                {/* Joined */}
+                <td className="px-6 py-3 text-sm text-gray-500 text-center whitespace-nowrap">
+                  {user.joined}
+                </td>
+
+                {/* Last Active */}
+                <td className="px-6 py-3 text-sm text-gray-500 text-center whitespace-nowrap">
+                  {user.lastActive}
                 </td>
 
                 {/* Status */}
-                <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-6 py-3 text-center whitespace-nowrap">
                   <span
                     className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                      grant.status === 'Open'
+                      user.status === 'Active'
                         ? 'bg-green-100 text-green-800'
-                        : grant.status === 'Upcoming'
-                        ? 'bg-blue-100 text-blue-800'
                         : 'bg-red-100 text-red-800'
                     }`}
                   >
-                    {grant.status}
+                    {user.status}
                   </span>
                 </td>
 
-                {/* Deadline */}
-                <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                  {grant.deadline}
-                </td>
-
                 {/* Actions */}
-                <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-6 py-3 whitespace-nowrap">
                   <div className="flex justify-center gap-2">
                     <button
-                      onClick={() => onView(grant)}
+                      onClick={() => onView(user)}
                       className="text-blue-600 hover:text-blue-800 transition-colors p-1 rounded cursor-pointer"
                       title="View"
                     >
                       <Eye className="w-5 h-5" />
                     </button>
 
-                    <button
-                      onClick={() => onEdit(grant)}
-                      className="text-green-600 hover:text-green-800 transition-colors p-1 rounded cursor-pointer"
+                    {/* <button
+                      onClick={() => onEdit(user)}
+                      className="text-green-600 hover:text-green-800 transition-colors p-1 rounded"
                       title="Edit"
                     >
                       <Edit className="w-5 h-5" />
-                    </button>
+                    </button> */}
 
                     <button
-                      onClick={() => handleDeleteClick(grant)}
+                      onClick={() => handleDeleteClick(user)}
                       className="text-red-600 hover:text-red-800 transition-colors p-1 rounded cursor-pointer"
                       title="Delete"
                     >
@@ -232,7 +212,7 @@ export default function GrantTable({
           <DialogHeader>
             <DialogTitle>Are You Sure?</DialogTitle>
             <DialogDescription>
-              Are you sure you want to delete this Grant?
+              Are you sure you want to delete this user?
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>

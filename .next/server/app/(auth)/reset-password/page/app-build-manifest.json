@@ -1,0 +1,30 @@
+{
+  "pages": {
+    "/(auth)/reset-password/page": [
+      "static/chunks/2d19f_next_dist_09c0efd4._.js",
+      "static/chunks/3221e_patterns_oliver_patterns-admin-dashboard_src_app_favicon_ico_mjs_30e16740._.js",
+      "static/chunks/[root-of-the-server]__9eea4186._.css",
+      "static/chunks/2d19f_01a7cfb5._.js",
+      "static/chunks/oliverA_patterns_oliver_patterns-admin-dashboard_src_app_providers_tsx_6695a142._.js",
+      "static/chunks/oliverA_patterns_oliver_patterns-admin-dashboard_src_app_layout_tsx_3047e1ae._.js",
+      "static/chunks/2d19f_ee8e904e._.js",
+      "static/chunks/oliverA_patterns_oliver_patterns-admin-dashboard_src_db0a4b67._.js",
+      "static/chunks/oliverA_patterns_oliver_patterns-admin-dashboard_src_app_not-found_tsx_48b9670b._.js",
+      "static/chunks/2d19f_next_dist_client_components_builtin_global-error_48b9670b.js",
+      "static/chunks/2d19f_zod_v4_2cf6b07e._.js",
+      "static/chunks/2d19f_tailwind-merge_dist_bundle-mjs_mjs_c99192b6._.js",
+      "static/chunks/2d19f_1ebd9128._.js",
+      "static/chunks/oliverA_patterns_oliver_patterns-admin-dashboard_src_fe4987f8._.js",
+      "static/chunks/0740d_oliver_patterns-admin-dashboard_src_app_(auth)_reset-password_page_tsx_48b9670b._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_bc6656f9._.js",
+      "static/chunks/2d19f_next_dist_compiled_react-dom_65171354._.js",
+      "static/chunks/2d19f_next_dist_compiled_next-devtools_index_70ca39d7.js",
+      "static/chunks/2d19f_next_dist_compiled_7c574ad2._.js",
+      "static/chunks/2d19f_next_dist_client_326a2322._.js",
+      "static/chunks/2d19f_next_dist_a4b48f07._.js",
+      "static/chunks/2d19f_@swc_helpers_cjs_812366ff._.js",
+      "static/chunks/oliverA_patterns_oliver_patterns-admin-dashboard_a0ff3932._.js",
+      "static/chunks/turbopack-oliverA_patterns_oliver_patterns-admin-dashboard_daca263c._.js"
+    ]
+  }
+}

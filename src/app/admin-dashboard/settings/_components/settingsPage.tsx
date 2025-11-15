@@ -184,7 +184,7 @@ export default function SettingsPage() {
               onClick={() => setActiveTab('profile')}
               className={`px-2 py-3 font-medium transition-colors cursor-pointer ${
                 activeTab === 'profile'
-                  ? 'text-blue-600 border-b-2 border-blue-600'
+                  ? 'text-[#0C2661] border-b-2 border-[#0C2661]'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
@@ -194,7 +194,7 @@ export default function SettingsPage() {
               onClick={() => setActiveTab('password')}
               className={`px-2 py-3 font-medium transition-colors cursor-pointer ${
                 activeTab === 'password'
-                  ? 'text-blue-600 border-b-2 border-blue-600'
+                  ? 'text-[#0C2661] border-b-2 border-[#0C2661]'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >

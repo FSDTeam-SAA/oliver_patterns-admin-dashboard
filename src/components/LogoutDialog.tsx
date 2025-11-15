@@ -29,7 +29,7 @@ export default function LogoutDialog() {
         className="flex items-center gap-3 px-6 py-3 rounded-lg cursor-pointer transition-all text-[#E53E3E] hover:bg-red-50 w-full"
       >
         <LogOut size={22} />
-        <span className="text-base font-medium">Log Out</span>
+        <span className="text-base font-semibold">Log Out</span>
       </button>
 
       {/* Modal */}

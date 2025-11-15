@@ -1186,7 +1186,7 @@ function SettingsPage() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>setActiveTab('profile'),
-                                className: `px-2 py-3 font-medium transition-colors cursor-pointer ${activeTab === 'profile' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-600 hover:text-gray-900'}`,
+                                className: `px-2 py-3 font-medium transition-colors cursor-pointer ${activeTab === 'profile' ? 'text-[#0C2661] border-b-2 border-[#0C2661]' : 'text-gray-600 hover:text-gray-900'}`,
                                 children: "Personal Information"
                             }, void 0, false, {
                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/settings/_components/settingsPage.tsx",
@@ -1195,7 +1195,7 @@ function SettingsPage() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>setActiveTab('password'),
-                                className: `px-2 py-3 font-medium transition-colors cursor-pointer ${activeTab === 'password' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-600 hover:text-gray-900'}`,
+                                className: `px-2 py-3 font-medium transition-colors cursor-pointer ${activeTab === 'password' ? 'text-[#0C2661] border-b-2 border-[#0C2661]' : 'text-gray-600 hover:text-gray-900'}`,
                                 children: "Change Password"
                             }, void 0, false, {
                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/settings/_components/settingsPage.tsx",

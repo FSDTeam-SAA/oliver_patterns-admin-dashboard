@@ -1,46 +1,45 @@
-// ==================== FILE: app/admin-dashboard/user-management/_components/UserManagement.tsx ====================
 'use client'
 
 import React, { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { Plus } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-
-import { demoUsersData } from '../../../../../data/demoUsers'
 import { toast } from 'sonner'
-import { User } from '../../../../../types/userTypes'
 import UserTable from './user-table'
+import { useDeleteUser, useGetUsers, User } from '@/lib/usersApi'
+import { useSession } from 'next-auth/react'
 
 export default function UserManagement() {
-  const router = useRouter()
   const [currentPage, setCurrentPage] = useState(1)
   const [isDetailsOpen, setIsDetailsOpen] = useState(false)
   const [viewingUser, setViewingUser] = useState<User | null>(null)
-  const [users, setUsers] = useState(demoUsersData.users)
 
-  const handleAddUser = () => {
-    router.push('/admin-dashboard/user-management/add')
-  }
+  const accessToken = useSession()?.data?.user?.accessToken || ''
 
-  const handleEditUser = (user: User) => {
-    router.push(`/admin-dashboard/user-management/edit/${user._id}`)
-  }
+  const {
+    data: usersData,
+    isLoading,
+    error,
+  } = useGetUsers(accessToken, currentPage, 10)
+
+  const deleteUserMutation = useDeleteUser(accessToken)
 
   const handleViewUser = (user: User) => {
     setViewingUser(user)
     setIsDetailsOpen(true)
   }
 
-  const handleDeleteUser = (userId: string) => {
-    setUsers(users.filter((u) => u._id !== userId))
-    toast.success('User deleted successfully')
+  const handleDeleteUser = async (userId: string) => {
+    try {
+      await deleteUserMutation.mutateAsync(userId)
+      toast.success('User deleted successfully')
+    } catch (error) {
+      toast.error('Failed to delete user')
+    }
   }
 
   const handlePageChange = (page: number) => {
@@ -48,46 +47,26 @@ export default function UserManagement() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const pagination = demoUsersData.pagination
+  const users = usersData?.data?.users || []
+  const pagination = usersData?.data?.paginationInfo || {
+    currentPage: 1,
+    totalPages: 1,
+    totalData: 0,
+    hasNextPage: false,
+    hasPrevPage: false,
+  }
 
   return (
     <div className="bg-gray-50">
       <div className="w-full mx-auto">
-        {/* Header */}
-        <div className="mb-4">
-          <div className="flex flex-col sm:flex-row sm:justify-end sm:items-center gap-4 mb-0">
-            {/* <div>
-              <h1 className="text-3xl font-bold text-[#5A8DEE]">
-                User Management
-              </h1>
-              <div className="flex items-center text-sm text-gray-500 mt-2">
-                <span>Dashboard</span>
-                <ChevronRight className="w-4 h-4 mx-2" />
-                <span className="text-gray-900 font-medium">
-                  User Management
-                </span>
-              </div>
-            </div> */}
-            {/* <Button
-              onClick={handleAddUser}
-              className="h-11 px-6 flex items-center gap-2 bg-[#5A8DEE] hover:bg-[#4A7DD8]"
-            >
-              <Plus className="w-4 h-4" />
-              Add New User
-            </Button> */}
-          </div>
-        </div>
-
-        {/* Main Content */}
         <Card className="py-0">
           <CardContent className="p-0">
             <UserTable
               users={users}
               onView={handleViewUser}
-              onEdit={handleEditUser}
               onDelete={handleDeleteUser}
-              isLoading={false}
-              currentPage={currentPage}
+              isLoading={isLoading}
+              currentPage={pagination.currentPage}
               totalPages={pagination.totalPages}
               totalData={pagination.totalData}
               hasNextPage={pagination.hasNextPage}
@@ -97,7 +76,7 @@ export default function UserManagement() {
           </CardContent>
         </Card>
 
-        {/* View Details Dialog */}
+        {/* View User Details */}
         <Dialog open={isDetailsOpen} onOpenChange={setIsDetailsOpen}>
           <DialogContent className="max-w-md">
             <DialogHeader>
@@ -123,37 +102,32 @@ export default function UserManagement() {
                 </div>
 
                 <div>
-                  <p className="text-sm text-gray-500 mb-1">Plan Type</p>
-                  <p className="font-medium text-gray-900">
-                    {viewingUser.planType}
+                  <p className="text-sm text-gray-500 mb-1">Role</p>
+                  <p className="font-medium text-gray-900 capitalize">
+                    {viewingUser.role}
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-sm text-gray-500 mb-1">Joined</p>
-                  <p className="font-medium text-gray-900">
-                    {viewingUser.joined}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-sm text-gray-500 mb-1">Last Active</p>
-                  <p className="font-medium text-gray-900">
-                    {viewingUser.lastActive}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-sm text-gray-500 mb-1">Status</p>
+                  <p className="text-sm text-gray-500 mb-1">Account Active</p>
                   <span
                     className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-                      viewingUser.status === 'Active'
+                      viewingUser.isActive
                         ? 'bg-green-100 text-green-800'
                         : 'bg-red-100 text-red-800'
                     }`}
                   >
-                    {viewingUser.status}
+                    {viewingUser.isActive ? 'Active' : 'Inactive'}
                   </span>
+                </div>
+
+                <div>
+                  <p className="text-sm text-gray-500 mb-1">Subscription</p>
+                  <p className="font-medium">
+                    {viewingUser.hasActiveSubscription
+                      ? 'Active'
+                      : 'No Subscription'}
+                  </p>
                 </div>
               </div>
             )}

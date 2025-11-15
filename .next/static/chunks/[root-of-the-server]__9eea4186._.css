@@ -1768,6 +1768,10 @@
     border-color: var(--color-border);
   }
 
+  .border-\[\#0C2661\] {
+    border-color: #0c2661;
+  }
+
   .border-\[\#E5E7EB\] {
     border-color: #e5e7eb;
   }
@@ -2494,6 +2498,10 @@
 
   .text-white {
     color: var(--color-white);
+  }
+
+  .capitalize {
+    text-transform: capitalize;
   }
 
   .uppercase {

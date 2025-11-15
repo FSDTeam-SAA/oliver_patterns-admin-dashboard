@@ -363,116 +363,6 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
-"[project]/oliverA_patterns/oliver_patterns-admin-dashboard/data/demoUsers.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
-"use strict";
-
-__turbopack_context__.s([
-    "demoUsersData",
-    ()=>demoUsersData
-]);
-const demoUsersData = {
-    users: [
-        {
-            _id: '1',
-            name: 'Jane Smith',
-            email: 'jane.smith@email.com',
-            planType: 'Premium',
-            joined: 'Jun 05, 2025',
-            lastActive: 'July 04, 2025',
-            status: 'Active',
-            createdAt: '2025-06-05T10:30:00Z',
-            updatedAt: '2025-07-04T14:20:00Z'
-        },
-        {
-            _id: '2',
-            name: 'John Doe',
-            email: 'john.doe@email.com',
-            planType: 'Premium',
-            joined: 'Jun 05, 2025',
-            lastActive: 'July 04, 2025',
-            status: 'Active',
-            createdAt: '2025-06-05T09:15:00Z',
-            updatedAt: '2025-07-04T16:45:00Z'
-        },
-        {
-            _id: '3',
-            name: 'Alice Johnson',
-            email: 'alice.johnson@email.com',
-            planType: 'Basic',
-            joined: 'Jun 05, 2025',
-            lastActive: 'July 04, 2025',
-            status: 'Active',
-            createdAt: '2025-06-05T11:00:00Z',
-            updatedAt: '2025-07-04T13:30:00Z'
-        },
-        {
-            _id: '4',
-            name: 'Robert Williams',
-            email: 'robert.williams@email.com',
-            planType: 'Free',
-            joined: 'Jun 05, 2025',
-            lastActive: 'July 04, 2025',
-            status: 'Inactive',
-            createdAt: '2025-06-05T08:30:00Z',
-            updatedAt: '2025-07-04T12:15:00Z'
-        },
-        {
-            _id: '5',
-            name: 'Emily Davis',
-            email: 'emily.davis@email.com',
-            planType: 'Premium',
-            joined: 'Jun 05, 2025',
-            lastActive: 'July 04, 2025',
-            status: 'Active',
-            createdAt: '2025-06-05T13:45:00Z',
-            updatedAt: '2025-07-04T17:00:00Z'
-        },
-        {
-            _id: '6',
-            name: 'Michael Brown',
-            email: 'michael.brown@email.com',
-            planType: 'Basic',
-            joined: 'Jun 05, 2025',
-            lastActive: 'July 04, 2025',
-            status: 'Active',
-            createdAt: '2025-06-05T10:20:00Z',
-            updatedAt: '2025-07-04T15:30:00Z'
-        },
-        {
-            _id: '7',
-            name: 'David Lopez',
-            email: 'david.lopez@email.com',
-            planType: 'Basic',
-            joined: 'Jun 05, 2025',
-            lastActive: 'July 04, 2025',
-            status: 'Inactive',
-            createdAt: '2025-06-05T15:00:00Z',
-            updatedAt: '2025-07-04T11:45:00Z'
-        },
-        {
-            _id: '8',
-            name: 'Olivia Miller',
-            email: 'olivia.miller@email.com',
-            planType: 'Premium',
-            joined: 'Jun 05, 2025',
-            lastActive: 'July 04, 2025',
-            status: 'Inactive',
-            createdAt: '2025-06-05T12:30:00Z',
-            updatedAt: '2025-07-04T10:20:00Z'
-        }
-    ],
-    pagination: {
-        currentPage: 1,
-        totalPages: 1,
-        totalData: 8,
-        hasNextPage: false,
-        hasPrevPage: false
-    }
-};
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
-}
-}),
 "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/components/ui/button.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -540,7 +430,6 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-// ==================== FILE: app/admin-dashboard/user-management/_components/UserTable.tsx ====================
 __turbopack_context__.s([
     "default",
     ()=>UserTable
@@ -583,39 +472,29 @@ function UserTable(param) {
                 className: "animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"
             }, void 0, false, {
                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                lineNumber: 65,
+                lineNumber: 61,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-            lineNumber: 64,
+            lineNumber: 60,
             columnNumber: 7
         }, this);
     }
     if (!users || users.length === 0) {
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "text-center py-12 text-gray-500 bg-gray-50 rounded-lg",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-lg",
-                    children: "No users found"
-                }, void 0, false, {
-                    fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                    lineNumber: 73,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-sm mt-1",
-                    children: "Add your first user to get started"
-                }, void 0, false, {
-                    fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                    lineNumber: 74,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "text-lg",
+                children: "No users found"
+            }, void 0, false, {
+                fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
+                lineNumber: 69,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
             fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-            lineNumber: 72,
+            lineNumber: 68,
             columnNumber: 7
         }, this);
     }
@@ -623,9 +502,7 @@ function UserTable(param) {
         const pages = [];
         const maxPagesToShow = 5;
         if (totalPages <= maxPagesToShow) {
-            for(let i = 1; i <= totalPages; i++){
-                pages.push(i);
-            }
+            for(let i = 1; i <= totalPages; i++)pages.push(i);
         } else {
             if (currentPage <= 3) {
                 for(let i = 1; i <= 3; i++)pages.push(i);
@@ -656,7 +533,7 @@ function UserTable(param) {
                     className: "w-full",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
-                            className: "bg-blue-100 border-b ",
+                            className: "bg-blue-100 border-b",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -664,39 +541,31 @@ function UserTable(param) {
                                         children: "Name"
                                     }, void 0, false, {
                                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                        lineNumber: 116,
+                                        lineNumber: 108,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                         className: "px-6 py-2 text-center text-sm font-medium text-gray-500 uppercase",
-                                        children: "Plan Type"
+                                        children: "Role"
                                     }, void 0, false, {
                                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                        lineNumber: 119,
+                                        lineNumber: 111,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                         className: "px-6 py-2 text-center text-sm font-medium text-gray-500 uppercase",
-                                        children: "Joined"
+                                        children: "Active"
                                     }, void 0, false, {
                                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 114,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                         className: "px-6 py-2 text-center text-sm font-medium text-gray-500 uppercase",
-                                        children: "Last Active"
+                                        children: "Subscription"
                                     }, void 0, false, {
                                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                        lineNumber: 125,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                        className: "px-6 py-2 text-center text-sm font-medium text-gray-500 uppercase",
-                                        children: "Status"
-                                    }, void 0, false, {
-                                        fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                        lineNumber: 128,
+                                        lineNumber: 117,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -704,163 +573,147 @@ function UserTable(param) {
                                         children: "Actions"
                                     }, void 0, false, {
                                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 120,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                lineNumber: 115,
+                                lineNumber: 107,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                            lineNumber: 114,
+                            lineNumber: 106,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
-                            className: "bg-white divide-y divide-gray-200 text-[#343A40]",
+                            className: "bg-white divide-y divide-gray-200",
                             children: users.map((user)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                     className: "hover:bg-gray-50 transition-colors",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                            className: "px-6 py-2.5",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "font-medium text-gray-900",
-                                                        children: user.name
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                                        lineNumber: 142,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-sm text-gray-500",
-                                                        children: user.email
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                                        lineNumber: 143,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
+                                            className: "px-6 py-3",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "font-medium text-gray-900",
+                                                    children: user.name
+                                                }, void 0, false, {
+                                                    fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
+                                                    lineNumber: 130,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-sm text-gray-500",
+                                                    children: user.email
+                                                }, void 0, false, {
+                                                    fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
+                                                    lineNumber: 131,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
+                                            lineNumber: 129,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                            className: "px-6 py-3 text-center text-sm capitalize",
+                                            children: user.role
+                                        }, void 0, false, {
+                                            fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
+                                            lineNumber: 134,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                            className: "px-6 py-3 text-center",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ".concat(user.isActive ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'),
+                                                children: user.isActive ? 'Active' : 'Inactive'
+                                            }, void 0, false, {
                                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                                lineNumber: 141,
+                                                lineNumber: 139,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                            lineNumber: 140,
+                                            lineNumber: 138,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                            className: "px-6 py-3 text-sm text-gray-600 text-center whitespace-nowrap",
-                                            children: user.planType
+                                            className: "px-6 py-3 text-center text-sm",
+                                            children: user.hasActiveSubscription ? 'Active' : 'None'
                                         }, void 0, false, {
                                             fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                            lineNumber: 148,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                            className: "px-6 py-3 text-sm text-gray-500 text-center whitespace-nowrap",
-                                            children: user.joined
-                                        }, void 0, false, {
-                                            fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                            lineNumber: 153,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                            className: "px-6 py-3 text-sm text-gray-500 text-center whitespace-nowrap",
-                                            children: user.lastActive
-                                        }, void 0, false, {
-                                            fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                            lineNumber: 158,
+                                            lineNumber: 150,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "px-6 py-3 text-center whitespace-nowrap",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ".concat(user.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'),
-                                                children: user.status
-                                            }, void 0, false, {
-                                                fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                                lineNumber: 164,
-                                                columnNumber: 19
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                            lineNumber: 163,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                            className: "px-6 py-3 whitespace-nowrap",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "flex justify-center gap-2",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                         onClick: ()=>onView(user),
-                                                        className: "text-blue-600 hover:text-blue-800 transition-colors p-1 rounded cursor-pointer",
-                                                        title: "View",
+                                                        className: "text-blue-600 hover:text-blue-800 p-1",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$eye$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Eye$3e$__["Eye"], {
                                                             className: "w-5 h-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                                            lineNumber: 183,
+                                                            lineNumber: 160,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                                        lineNumber: 178,
+                                                        lineNumber: 156,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                         onClick: ()=>handleDeleteClick(user),
-                                                        className: "text-red-600 hover:text-red-800 transition-colors p-1 rounded cursor-pointer",
-                                                        title: "Delete",
+                                                        className: "text-red-600 hover:text-red-800 p-1",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__["Trash2"], {
                                                             className: "w-5 h-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                                            lineNumber: 199,
+                                                            lineNumber: 167,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                                        lineNumber: 194,
+                                                        lineNumber: 163,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                                lineNumber: 177,
+                                                lineNumber: 155,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                            lineNumber: 176,
+                                            lineNumber: 154,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, user._id, true, {
                                     fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                    lineNumber: 138,
+                                    lineNumber: 128,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                            lineNumber: 136,
+                            lineNumber: 126,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                    lineNumber: 113,
+                    lineNumber: 105,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                lineNumber: 112,
+                lineNumber: 104,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -871,23 +724,23 @@ function UserTable(param) {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogHeader"], {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogTitle"], {
-                                    children: "Are You Sure?"
+                                    children: "Delete User?"
                                 }, void 0, false, {
                                     fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                    lineNumber: 213,
+                                    lineNumber: 181,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
                                     children: "Are you sure you want to delete this user?"
                                 }, void 0, false, {
                                     fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                    lineNumber: 214,
+                                    lineNumber: 182,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                            lineNumber: 212,
+                            lineNumber: 180,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogFooter"], {
@@ -899,12 +752,12 @@ function UserTable(param) {
                                         children: "Cancel"
                                     }, void 0, false, {
                                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                        lineNumber: 220,
+                                        lineNumber: 188,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                    lineNumber: 219,
+                                    lineNumber: 187,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -913,24 +766,24 @@ function UserTable(param) {
                                     children: "Delete"
                                 }, void 0, false, {
                                     fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                    lineNumber: 222,
+                                    lineNumber: 190,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                            lineNumber: 218,
+                            lineNumber: 186,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                    lineNumber: 211,
+                    lineNumber: 179,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                lineNumber: 210,
+                lineNumber: 178,
                 columnNumber: 7
             }, this),
             totalPages > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -950,7 +803,7 @@ function UserTable(param) {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                        lineNumber: 233,
+                        lineNumber: 200,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -959,61 +812,61 @@ function UserTable(param) {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>onPageChange(currentPage - 1),
                                 disabled: !hasPrevPage,
-                                className: "px-2 py-1 rounded border transition flex items-center ".concat(hasPrevPage ? 'hover:bg-gray-100 text-gray-700' : 'opacity-40 cursor-not-allowed'),
+                                className: "px-2 py-1 rounded border ".concat(hasPrevPage ? 'hover:bg-gray-100' : 'opacity-40'),
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__["ChevronLeft"], {
                                     className: "w-5 h-5"
                                 }, void 0, false, {
                                     fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                    lineNumber: 250,
+                                    lineNumber: 213,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                lineNumber: 241,
+                                lineNumber: 206,
                                 columnNumber: 13
                             }, this),
                             getPageNumbers().map((page, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: ()=>typeof page === 'number' && onPageChange(page),
                                     disabled: page === '...',
-                                    className: "px-3 py-1 rounded text-sm font-medium min-w-[32px] ".concat(page === currentPage ? 'bg-[#0C2661] text-white' : page === '...' ? 'text-gray-400 cursor-default' : 'text-gray-700 hover:bg-gray-100'),
+                                    onClick: ()=>typeof page === 'number' && onPageChange(page),
+                                    className: "px-3 py-1 rounded text-sm min-w-[32px] ".concat(page === currentPage ? 'bg-[#0C2661] text-white' : 'hover:bg-gray-100'),
                                     children: page
                                 }, index, false, {
                                     fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                    lineNumber: 255,
+                                    lineNumber: 217,
                                     columnNumber: 15
                                 }, this)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>onPageChange(currentPage + 1),
                                 disabled: !hasNextPage,
-                                className: "px-2 py-1 rounded border transition flex items-center ".concat(hasNextPage ? 'hover:bg-gray-100 text-gray-700' : 'opacity-40 cursor-not-allowed'),
+                                className: "px-2 py-1 rounded border ".concat(hasNextPage ? 'hover:bg-gray-100' : 'opacity-40'),
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                     className: "w-5 h-5"
                                 }, void 0, false, {
                                     fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                    lineNumber: 281,
+                                    lineNumber: 238,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                                lineNumber: 272,
+                                lineNumber: 231,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                        lineNumber: 239,
+                        lineNumber: 205,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-                lineNumber: 231,
+                lineNumber: 199,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx",
-        lineNumber: 110,
+        lineNumber: 103,
         columnNumber: 5
     }, this);
 }
@@ -1025,10 +878,234 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
+"[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/lib/usersApi.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// ==================== FILE: lib/userApi.ts ====================
+__turbopack_context__.s([
+    "useAddUser",
+    ()=>useAddUser,
+    "useDeleteUser",
+    ()=>useDeleteUser,
+    "useGetSingleUser",
+    ()=>useGetSingleUser,
+    "useGetUsers",
+    ()=>useGetUsers,
+    "useUpdateUser",
+    ()=>useUpdateUser,
+    "useUpdateUserStatus",
+    ()=>useUpdateUserStatus
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useQuery$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/@tanstack/react-query/build/modern/useQuery.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/@tanstack/react-query/build/modern/useMutation.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js [app-client] (ecmascript)");
+var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature(), _s2 = __turbopack_context__.k.signature(), _s3 = __turbopack_context__.k.signature(), _s4 = __turbopack_context__.k.signature(), _s5 = __turbopack_context__.k.signature();
+;
+const API_BASE_URL = ("TURBOPACK compile-time value", "http://localhost:5000/api/v1") || 'http://localhost:3000/api';
+const useGetUsers = function(accessToken) {
+    let page = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 1, limit = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : 10;
+    _s();
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useQuery$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQuery"])({
+        queryKey: [
+            'users',
+            page,
+            limit
+        ],
+        queryFn: {
+            "useGetUsers.useQuery": async ()=>{
+                const response = await fetch("".concat(API_BASE_URL, "/user/all-users?page=").concat(page, "&limit=").concat(limit), {
+                    headers: {
+                        Authorization: "Bearer ".concat(accessToken)
+                    }
+                });
+                if (!response.ok) throw new Error('Failed to fetch users');
+                return response.json();
+            }
+        }["useGetUsers.useQuery"],
+        enabled: !!accessToken
+    });
+};
+_s(useGetUsers, "4ZpngI1uv+Uo3WQHEZmTQ5FNM+k=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useQuery$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQuery"]
+    ];
+});
+const useGetSingleUser = (userId, accessToken)=>{
+    _s1();
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useQuery$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQuery"])({
+        queryKey: [
+            'user',
+            userId
+        ],
+        queryFn: {
+            "useGetSingleUser.useQuery": async ()=>{
+                const response = await fetch("".concat(API_BASE_URL, "/user/").concat(userId), {
+                    headers: {
+                        Authorization: "Bearer ".concat(accessToken)
+                    }
+                });
+                if (!response.ok) throw new Error('Failed to fetch user');
+                return response.json();
+            }
+        }["useGetSingleUser.useQuery"],
+        enabled: !!accessToken && !!userId
+    });
+};
+_s1(useGetSingleUser, "4ZpngI1uv+Uo3WQHEZmTQ5FNM+k=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useQuery$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQuery"]
+    ];
+});
+const useAddUser = (accessToken)=>{
+    _s2();
+    const queryClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"])();
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"])({
+        mutationFn: {
+            "useAddUser.useMutation": async (data)=>{
+                const response = await fetch("".concat(API_BASE_URL, "/user"), {
+                    method: 'POST',
+                    headers: {
+                        Authorization: "Bearer ".concat(accessToken),
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                if (!response.ok) throw new Error('Failed to add user');
+                return response.json();
+            }
+        }["useAddUser.useMutation"],
+        onSuccess: {
+            "useAddUser.useMutation": ()=>{
+                queryClient.invalidateQueries({
+                    queryKey: [
+                        'users'
+                    ]
+                });
+            }
+        }["useAddUser.useMutation"]
+    });
+};
+_s2(useAddUser, "YK0wzM21ECnncaq5SECwU+/SVdQ=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"]
+    ];
+});
+const useUpdateUser = (accessToken)=>{
+    _s3();
+    const queryClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"])();
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"])({
+        mutationFn: {
+            "useUpdateUser.useMutation": async (param)=>{
+                let { userId, data } = param;
+                const response = await fetch("".concat(API_BASE_URL, "/user/").concat(userId), {
+                    method: 'PUT',
+                    headers: {
+                        Authorization: "Bearer ".concat(accessToken),
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                if (!response.ok) throw new Error('Failed to update user');
+                return response.json();
+            }
+        }["useUpdateUser.useMutation"],
+        onSuccess: {
+            "useUpdateUser.useMutation": ()=>{
+                queryClient.invalidateQueries({
+                    queryKey: [
+                        'users'
+                    ]
+                });
+            }
+        }["useUpdateUser.useMutation"]
+    });
+};
+_s3(useUpdateUser, "YK0wzM21ECnncaq5SECwU+/SVdQ=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"]
+    ];
+});
+const useDeleteUser = (accessToken)=>{
+    _s4();
+    const queryClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"])();
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"])({
+        mutationFn: {
+            "useDeleteUser.useMutation": async (userId)=>{
+                const response = await fetch("".concat(API_BASE_URL, "/user/").concat(userId), {
+                    method: 'DELETE',
+                    headers: {
+                        Authorization: "Bearer ".concat(accessToken)
+                    }
+                });
+                if (!response.ok) throw new Error('Failed to delete user');
+                return response.json();
+            }
+        }["useDeleteUser.useMutation"],
+        onSuccess: {
+            "useDeleteUser.useMutation": ()=>{
+                queryClient.invalidateQueries({
+                    queryKey: [
+                        'users'
+                    ]
+                });
+            }
+        }["useDeleteUser.useMutation"]
+    });
+};
+_s4(useDeleteUser, "YK0wzM21ECnncaq5SECwU+/SVdQ=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"]
+    ];
+});
+const useUpdateUserStatus = (accessToken)=>{
+    _s5();
+    const queryClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"])();
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"])({
+        mutationFn: {
+            "useUpdateUserStatus.useMutation": async (param)=>{
+                let { userId, status } = param;
+                const response = await fetch("".concat(API_BASE_URL, "/user/").concat(userId, "/status"), {
+                    method: 'PATCH',
+                    headers: {
+                        Authorization: "Bearer ".concat(accessToken),
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        status
+                    })
+                });
+                if (!response.ok) throw new Error('Failed to update user status');
+                return response.json();
+            }
+        }["useUpdateUserStatus.useMutation"],
+        onSuccess: {
+            "useUpdateUserStatus.useMutation": ()=>{
+                queryClient.invalidateQueries({
+                    queryKey: [
+                        'users'
+                    ]
+                });
+            }
+        }["useUpdateUserStatus.useMutation"]
+    });
+};
+_s5(useUpdateUserStatus, "YK0wzM21ECnncaq5SECwU+/SVdQ=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQueryClient"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMutation"]
+    ];
+});
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
 "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-// ==================== FILE: app/admin-dashboard/user-management/_components/UserManagement.tsx ====================
 __turbopack_context__.s([
     "default",
     ()=>UserManagement
@@ -1037,9 +1114,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_p
 var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/components/ui/card.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/components/ui/dialog.tsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$data$2f$demoUsers$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/data/demoUsers.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/sonner/dist/index.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$app$2f$admin$2d$dashboard$2f$user$2d$management$2f$_components$2f$user$2d$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-table.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$lib$2f$usersApi$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/lib/usersApi.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/next-auth/react/index.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
@@ -1049,19 +1127,27 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 function UserManagement() {
+    var _useSession_data_user, _useSession_data, _useSession, _usersData_data, _usersData_data1;
     _s();
     const [currentPage, setCurrentPage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
     const [isDetailsOpen, setIsDetailsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [viewingUser, setViewingUser] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [users, setUsers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$data$2f$demoUsers$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["demoUsersData"].users);
+    const accessToken = ((_useSession = (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSession"])()) === null || _useSession === void 0 ? void 0 : (_useSession_data = _useSession.data) === null || _useSession_data === void 0 ? void 0 : (_useSession_data_user = _useSession_data.user) === null || _useSession_data_user === void 0 ? void 0 : _useSession_data_user.accessToken) || '';
+    const { data: usersData, isLoading, error } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$lib$2f$usersApi$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGetUsers"])(accessToken, currentPage, 10);
+    const deleteUserMutation = (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$lib$2f$usersApi$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDeleteUser"])(accessToken);
     const handleViewUser = (user)=>{
         setViewingUser(user);
         setIsDetailsOpen(true);
     };
-    const handleDeleteUser = (userId)=>{
-        setUsers(users.filter((u)=>u._id !== userId));
-        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success('User deleted successfully');
+    const handleDeleteUser = async (userId)=>{
+        try {
+            await deleteUserMutation.mutateAsync(userId);
+            __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success('User deleted successfully');
+        } catch (error) {
+            __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error('Failed to delete user');
+        }
     };
     const handlePageChange = (page)=>{
         setCurrentPage(page);
@@ -1070,26 +1156,19 @@ function UserManagement() {
             behavior: 'smooth'
         });
     };
-    const pagination = __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$data$2f$demoUsers$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["demoUsersData"].pagination;
+    const users = (usersData === null || usersData === void 0 ? void 0 : (_usersData_data = usersData.data) === null || _usersData_data === void 0 ? void 0 : _usersData_data.users) || [];
+    const pagination = (usersData === null || usersData === void 0 ? void 0 : (_usersData_data1 = usersData.data) === null || _usersData_data1 === void 0 ? void 0 : _usersData_data1.paginationInfo) || {
+        currentPage: 1,
+        totalPages: 1,
+        totalData: 0,
+        hasNextPage: false,
+        hasPrevPage: false
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "bg-gray-50",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "w-full mx-auto",
             children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "mb-4",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-col sm:flex-row sm:justify-end sm:items-center gap-4 mb-0"
-                    }, void 0, false, {
-                        fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                        lineNumber: 46,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                    lineNumber: 45,
-                    columnNumber: 9
-                }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
                     className: "py-0",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1097,10 +1176,9 @@ function UserManagement() {
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$app$2f$admin$2d$dashboard$2f$user$2d$management$2f$_components$2f$user$2d$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             users: users,
                             onView: handleViewUser,
-                            // onEdit={handleEditUser}
                             onDelete: handleDeleteUser,
-                            isLoading: false,
-                            currentPage: currentPage,
+                            isLoading: isLoading,
+                            currentPage: pagination.currentPage,
                             totalPages: pagination.totalPages,
                             totalData: pagination.totalData,
                             hasNextPage: pagination.hasNextPage,
@@ -1108,17 +1186,17 @@ function UserManagement() {
                             onPageChange: handlePageChange
                         }, void 0, false, {
                             fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                            lineNumber: 72,
+                            lineNumber: 64,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                        lineNumber: 71,
+                        lineNumber: 63,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                    lineNumber: 70,
+                    lineNumber: 62,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -1133,12 +1211,12 @@ function UserManagement() {
                                     children: "User Details"
                                 }, void 0, false, {
                                     fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 83,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                lineNumber: 91,
+                                lineNumber: 82,
                                 columnNumber: 13
                             }, this),
                             viewingUser && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1151,7 +1229,7 @@ function UserManagement() {
                                                 children: "Name"
                                             }, void 0, false, {
                                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                                lineNumber: 100,
+                                                lineNumber: 91,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1159,13 +1237,13 @@ function UserManagement() {
                                                 children: viewingUser.name
                                             }, void 0, false, {
                                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                                lineNumber: 101,
+                                                lineNumber: 92,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                        lineNumber: 99,
+                                        lineNumber: 90,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1175,7 +1253,7 @@ function UserManagement() {
                                                 children: "Email"
                                             }, void 0, false, {
                                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                                lineNumber: 107,
+                                                lineNumber: 98,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1183,141 +1261,123 @@ function UserManagement() {
                                                 children: viewingUser.email
                                             }, void 0, false, {
                                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                                lineNumber: 108,
+                                                lineNumber: 99,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                        lineNumber: 106,
+                                        lineNumber: 97,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-sm text-gray-500 mb-1",
-                                                children: "Plan Type"
+                                                children: "Role"
                                             }, void 0, false, {
                                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                                lineNumber: 114,
+                                                lineNumber: 105,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "font-medium text-gray-900",
-                                                children: viewingUser.planType
+                                                className: "font-medium text-gray-900 capitalize",
+                                                children: viewingUser.role
                                             }, void 0, false, {
                                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                                lineNumber: 115,
+                                                lineNumber: 106,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                        lineNumber: 113,
+                                        lineNumber: 104,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-sm text-gray-500 mb-1",
-                                                children: "Joined"
+                                                children: "Account Active"
                                             }, void 0, false, {
                                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                                lineNumber: 121,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "font-medium text-gray-900",
-                                                children: viewingUser.joined
-                                            }, void 0, false, {
-                                                fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                                lineNumber: 122,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                        lineNumber: 120,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm text-gray-500 mb-1",
-                                                children: "Last Active"
-                                            }, void 0, false, {
-                                                fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                                lineNumber: 128,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "font-medium text-gray-900",
-                                                children: viewingUser.lastActive
-                                            }, void 0, false, {
-                                                fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                                lineNumber: 129,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                        lineNumber: 127,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm text-gray-500 mb-1",
-                                                children: "Status"
-                                            }, void 0, false, {
-                                                fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                                lineNumber: 135,
+                                                lineNumber: 112,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ".concat(viewingUser.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'),
-                                                children: viewingUser.status
+                                                className: "inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ".concat(viewingUser.isActive ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'),
+                                                children: viewingUser.isActive ? 'Active' : 'Inactive'
                                             }, void 0, false, {
                                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                                lineNumber: 136,
+                                                lineNumber: 113,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                        lineNumber: 134,
+                                        lineNumber: 111,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-sm text-gray-500 mb-1",
+                                                children: "Subscription"
+                                            }, void 0, false, {
+                                                fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
+                                                lineNumber: 125,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "font-medium",
+                                                children: viewingUser.hasActiveSubscription ? 'Active' : 'No Subscription'
+                                            }, void 0, false, {
+                                                fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
+                                                lineNumber: 126,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
+                                        lineNumber: 124,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                                lineNumber: 98,
+                                lineNumber: 89,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                        lineNumber: 90,
+                        lineNumber: 81,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-                    lineNumber: 89,
+                    lineNumber: 80,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-            lineNumber: 43,
+            lineNumber: 61,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/_components/user-management.tsx",
-        lineNumber: 42,
+        lineNumber: 60,
         columnNumber: 5
     }, this);
 }
-_s(UserManagement, "gDEgIlSOTPFt5M2iPrKiyOo4gu8=");
+_s(UserManagement, "AqJyLjWHwo5+bxQE6qvfeVJcQsE=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSession"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$lib$2f$usersApi$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGetUsers"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$oliverA_patterns$2f$oliver_patterns$2d$admin$2d$dashboard$2f$src$2f$lib$2f$usersApi$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDeleteUser"]
+    ];
+});
 _c = UserManagement;
 var _c;
 __turbopack_context__.k.register(_c, "UserManagement");
@@ -1327,4 +1387,4 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 }),
 ]);
 
-//# sourceMappingURL=oliverA_patterns_oliver_patterns-admin-dashboard_1c833a12._.js.map
+//# sourceMappingURL=oliverA_patterns_oliver_patterns-admin-dashboard_src_1737aeb4._.js.map

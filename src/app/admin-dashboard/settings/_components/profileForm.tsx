@@ -9,8 +9,8 @@ import { Textarea } from '@/components/ui/textarea'
 import { Loader2 } from 'lucide-react'
 
 interface ProfileFormProps {
-  fullName: string
-  setFullName: (value: string) => void
+  name: string
+  setName: (value: string) => void
   username: string
   setUsername: (value: string) => void
   email: string
@@ -24,9 +24,10 @@ interface ProfileFormProps {
 }
 
 export function ProfileForm({
-  fullName,
-  setFullName,
+  name,
+  setName,
   setUsername,
+  username,
   email,
   phoneNumber,
   setPhoneNumber,
@@ -43,8 +44,8 @@ export function ProfileForm({
           <Label htmlFor="fullName">Full Name</Label>
           <Input
             id="fullName"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Enter your full name"
             className="mt-1 bg-[#EDF2F6]"
           />
@@ -56,6 +57,7 @@ export function ProfileForm({
             id="email"
             value={email}
             disabled
+            readOnly
             className="mt-1 bg-[#EDF2F6] cursor-not-allowed"
           />
         </div>
@@ -64,11 +66,9 @@ export function ProfileForm({
           <Label htmlFor="username">Username</Label>
           <Input
             id="username"
-            value={fullName.split(' ').join('').toLowerCase()}
+            value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Enter your username"
-            readOnly
-            disabled
             className="mt-1 bg-[#EDF2F6]"
           />
         </div>
@@ -100,7 +100,7 @@ export function ProfileForm({
         <Button
           onClick={onSubmit}
           disabled={isUpdating}
-          className="min-w-[140px]"
+          className="min-w-[140px] bg-[#0C2661]"
         >
           {isUpdating ? (
             <>
@@ -113,7 +113,8 @@ export function ProfileForm({
         </Button>
         <Button
           type="button"
-          variant="outline"
+          className="border border-gray-300 rounded-sm font-normal text-gray-500"
+          variant="ghost"
           onClick={onReset}
           disabled={isUpdating}
         >

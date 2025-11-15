@@ -86,7 +86,7 @@ export default function SettingsPage() {
   useEffect(() => {
     if (profileData?.data) {
       const profile = profileData.data
-      setFullName(profile.fullName || '')
+      setFullName(profile?.name || '')
       setUsername(profile.username || '')
       setEmail(profile.email || '')
       setPhoneNumber(profile.phoneNumber || '')
@@ -114,9 +114,11 @@ export default function SettingsPage() {
     updateProfileImage(formData)
   }
 
+  // ================= FIXED PARTS ONLY =================
+
   const handleUpdateProfile = () => {
     const profilePayload: UpdateProfileData = {
-      fullName,
+      name: fullName, // FIXED
       username,
       phoneNumber,
       bio,
@@ -144,7 +146,7 @@ export default function SettingsPage() {
     if (activeTab === 'profile') {
       if (profileData?.data) {
         const profile = profileData.data
-        setFullName(profile.fullName || '')
+        setFullName(profile.name || '')
         setUsername(profile.username || '')
         setPhoneNumber(profile.phoneNumber || '')
         setBio(profile.bio || '')
@@ -211,8 +213,8 @@ export default function SettingsPage() {
               />
 
               <ProfileForm
-                fullName={fullName}
-                setFullName={setFullName}
+                name={fullName} // FIXED
+                setName={setFullName}
                 username={username}
                 setUsername={setUsername}
                 email={email}

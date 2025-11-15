@@ -25,17 +25,21 @@ export default async function RootLayout({
 
   return (
     <div className="bg-[#F8F9FC] min-h-screen flex">
-      {/* Sidebar */}
-      <Sidebar />
+      {/* Sidebar - Fixed */}
+      <div className="w-[300px] fixed left-0 top-0 h-screen">
+        <Sidebar />
+      </div>
 
-      {/* Main Content */}
-      <main className="flex-1 flex flex-col">
-        {/* Top Header */}
-        <UserHeader />
+      {/* Main Area */}
+      <div className="flex-1 ml-[300px] flex flex-col h-screen overflow-hidden">
+        {/* Header - Fixed */}
+        <div className="fixed left-[300px] right-0 top-0 z-10 bg-sky-100/50 border-b border-gray-200">
+          <UserHeader />
+        </div>
 
-        {/* Page Content */}
-        <div className="flex-1 px-8 pt-4">{children}</div>
-      </main>
+        {/* Page Content (scrollable) */}
+        <div className="flex-1 overflow-y-auto pt-[110px] px-4">{children}</div>
+      </div>
     </div>
   )
 }

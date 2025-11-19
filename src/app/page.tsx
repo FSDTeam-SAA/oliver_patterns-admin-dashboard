@@ -31,10 +31,10 @@ export const useAuthStore = create<AuthStore>((set) => ({
 export default function Home() {
   const session = useSession()
 
-  // if (!session?.data?.user?.accessToken) {
-  //   redirect('/signin')
-  // } else {
-  //   redirect('/admin-dashboard/dashboard')
-  // }
-  redirect('admin-dashboard/dashboard')
+  if (!session?.data?.user?.accessToken) {
+    redirect('/signin')
+  } else {
+    redirect('/admin-dashboard/dashboard')
+  }
+  // redirect('admin-dashboard/dashboard')
 }

@@ -1,23 +1,29 @@
 globalThis.__BUILD_MANIFEST = {
   "pages": {
-    "/_app": []
+    "/_app": [
+      "static/chunks/f3fe366f1b71d447.js",
+      "static/chunks/bdcd944d58a25440.js",
+      "static/chunks/turbopack-2439cc74b1525035.js"
+    ],
+    "/_error": [
+      "static/chunks/3074b0dceec95b0e.js",
+      "static/chunks/bdcd944d58a25440.js",
+      "static/chunks/turbopack-71c7796b34e6e91c.js"
+    ]
   },
   "devFiles": [],
   "ampDevFiles": [],
   "polyfillFiles": [
-    "static/chunks/2d19f_next_dist_build_polyfills_polyfill-nomodule.js"
+    "static/chunks/a6dad97d9634a72d.js"
   ],
   "lowPriorityFiles": [],
   "rootMainFiles": [
-    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_bc6656f9._.js",
-    "static/chunks/2d19f_next_dist_compiled_react-dom_65171354._.js",
-    "static/chunks/2d19f_next_dist_compiled_next-devtools_index_70ca39d7.js",
-    "static/chunks/2d19f_next_dist_compiled_7c574ad2._.js",
-    "static/chunks/2d19f_next_dist_client_326a2322._.js",
-    "static/chunks/2d19f_next_dist_a4b48f07._.js",
-    "static/chunks/2d19f_@swc_helpers_cjs_812366ff._.js",
-    "static/chunks/oliverA_patterns_oliver_patterns-admin-dashboard_a0ff3932._.js",
-    "static/chunks/turbopack-oliverA_patterns_oliver_patterns-admin-dashboard_daca263c._.js"
+    "static/chunks/3b656a581190122f.js",
+    "static/chunks/bfd927b8c4ede3ca.js",
+    "static/chunks/06bc3afe270c96a3.js",
+    "static/chunks/34ea9ca10a8a9959.js",
+    "static/chunks/4510caffd399fc9c.js",
+    "static/chunks/turbopack-cc8dadf62383150b.js"
   ],
   "ampFirstPages": []
 };

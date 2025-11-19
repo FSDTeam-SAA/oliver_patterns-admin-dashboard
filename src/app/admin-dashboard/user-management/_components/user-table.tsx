@@ -219,9 +219,9 @@ export default function UserTable({
                 key={index}
                 disabled={page === '...'}
                 onClick={() => typeof page === 'number' && onPageChange(page)}
-                className={`px-3 py-1 rounded text-sm min-w-[32px] ${
-                  page === currentPage
-                    ? 'bg-[#0C2661] text-white'
+                className={`px-3 py-1 rounded text-sm min-w-[32px] transition ${
+                  typeof page === 'number' && page === currentPage
+                    ? '!bg-[#0C2661] !text-white !border-[#0C2661]'
                     : 'hover:bg-gray-100'
                 }`}
               >

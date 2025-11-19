@@ -1,11 +1,14 @@
 // ==================== FILE: app/admin-dashboard/contact-management/page.tsx ====================
 import React from 'react'
 import ContactManagement from './_components/contactManagement'
+import { auth } from '@/auth'
 
-export default function Page() {
+export default async function Page() {
+  const session = await auth()
+  const accessToken = session?.user?.accessToken || ''
   return (
     <div>
-      <ContactManagement />
+      <ContactManagement accessToken={accessToken} />
     </div>
   )
 }

@@ -8,7 +8,7 @@ export interface Grant {
   eligibility: string
   applicationProcess: string
   description: string
-  status: 'Open' | 'Closed' | 'Upcoming'
+  status: 'open' | 'closed' | 'upcoming'
   createdAt: string
   updatedAt: string
 }

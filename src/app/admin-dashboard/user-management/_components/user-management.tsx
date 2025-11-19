@@ -20,11 +20,11 @@ export default function UserManagement() {
 
   const accessToken = useSession()?.data?.user?.accessToken || ''
 
-  const {
-    data: usersData,
-    isLoading,
-    error,
-  } = useGetUsers(accessToken, currentPage, 10)
+  const { data: usersData, isLoading } = useGetUsers(
+    accessToken,
+    currentPage,
+    10
+  )
 
   const deleteUserMutation = useDeleteUser(accessToken)
 
@@ -38,6 +38,7 @@ export default function UserManagement() {
       await deleteUserMutation.mutateAsync(userId)
       toast.success('User deleted successfully')
     } catch (error) {
+      console.log(error)
       toast.error('Failed to delete user')
     }
   }
@@ -55,6 +56,8 @@ export default function UserManagement() {
     hasNextPage: false,
     hasPrevPage: false,
   }
+
+  console.log('pagination info', pagination)
 
   return (
     <div className="bg-gray-50">

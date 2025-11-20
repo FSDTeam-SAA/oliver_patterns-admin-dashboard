@@ -37,7 +37,7 @@ export function GrantCalendarView({ grants }: GrantCalendarViewProps) {
         <h2 className="text-xl font-semibold text-gray-800">Calendar</h2>
       </div> */}
 
-      <div className="w-full bg-slate-100 rounded-lg border border-gray-200 justify-center items-center flex">
+      <div className="w-full bg-slate-900 rounded-lg border border-gray-300 justify-center items-center flex">
         <Calendar
           mode="range"
           selected={dateRange}

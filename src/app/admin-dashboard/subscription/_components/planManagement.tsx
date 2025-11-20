@@ -67,9 +67,14 @@ export default function PlanManagement() {
   return (
     <div className="bg-gray-50">
       <div className="w-full mx-auto py-6">
-        <div className="flex items-center justify-end mb-4">
+        <div className="flex items-center justify-end mb-4 pr-4">
           <div className="flex gap-2">
-            <Button onClick={handleCreateClick}>+ Create Subscription</Button>
+            <Button
+              className="bg-gradient-to-br from-[#355AC7] to-[#1271F2]"
+              onClick={handleCreateClick}
+            >
+              + Create Subscription
+            </Button>
           </div>
         </div>
 

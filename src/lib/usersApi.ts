@@ -17,6 +17,7 @@ export interface User {
   email: string
   dob: string | null
   gender: string | null
+  planName: string | null
   role: 'ADMIN' | 'USER'
   wishlist: string[]
   stripeAccountId: string | null

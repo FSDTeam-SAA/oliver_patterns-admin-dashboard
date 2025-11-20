@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":["file:///home/kmsaifullah/Desktop/projects/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/subscription/page.tsx"],"sourcesContent":["import { redirect } from 'next/navigation'\n\nconst page = () => {\n  redirect('/admin-dashboard/subscription/pricing-plan')\n}\n\nexport default page\n"],"names":[],"mappings":";;;;AAAA;AAAA;;AAEA,MAAM,OAAO;IACX,IAAA,8PAAQ,EAAC;AACX;uCAEe","debugId":null}}]
+}

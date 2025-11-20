@@ -108,6 +108,10 @@ export default function UserTable({
                 Name
               </th>
               <th className="px-6 py-4 text-center text-sm font-medium text-gray-600 uppercase">
+                Plan Type
+              </th>
+
+              <th className="px-6 py-4 text-center text-sm font-medium text-gray-600 uppercase">
                 Role
               </th>
               <th className="px-6 py-4 text-center text-sm font-medium text-gray-600 uppercase">
@@ -128,6 +132,10 @@ export default function UserTable({
                 <td className="px-6 py-3">
                   <p className="font-medium text-gray-900">{user.name}</p>
                   <p className="text-sm text-gray-500">{user.email}</p>
+                </td>
+
+                <td className="px-6 py-3 text-center capitalize">
+                  {user.planName}
                 </td>
 
                 <td className="px-6 py-3 text-center capitalize">

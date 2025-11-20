@@ -23,9 +23,8 @@ export default function PlanPreviewCard({ open, onOpenChange, plan }: Props) {
           rounded-2xl 
           p-0 
           max-w-none 
-          w-[400px]
+          w-[365px]
           overflow-y-auto 
-          border 
           shadow-xl
         "
       >

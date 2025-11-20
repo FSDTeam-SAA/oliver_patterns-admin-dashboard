@@ -116,22 +116,22 @@ export default function GrantTable({
               {/* <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase">
                 No.
               </th> */}
-              <th className="px-6 py-4 text-left pl-40 text-sm font-medium text-gray-500 uppercase ">
+              <th className="px-6 py-4 text-left pl-40 text-base font-medium text-gray-500 uppercase ">
                 Title
               </th>
-              <th className="px-6 py-4 text-center text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase">
                 Type
               </th>
-              <th className="px-6 py-4 text-center text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase">
                 Funding
               </th>
-              <th className="px-6 py-4 text-center text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase">
                 Status
               </th>
-              <th className="px-6 py-4 text-center text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase">
                 Deadline
               </th>
-              <th className="px-6 py-4 text-center text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase">
                 Actions
               </th>
             </tr>
@@ -157,7 +157,7 @@ export default function GrantTable({
                 </td>
 
                 {/* Type */}
-                <td className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap">
+                <td className="px-6 py-4 text-base text-gray-600 whitespace-nowrap">
                   {grant.type}
                 </td>
 
@@ -169,7 +169,7 @@ export default function GrantTable({
                 {/* Status */}
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span
-                    className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                    className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium ${
                       grant.status === 'open'
                         ? 'bg-green-100 text-green-800'
                         : grant.status === 'upcoming'
@@ -182,7 +182,7 @@ export default function GrantTable({
                 </td>
 
                 {/* Deadline */}
-                <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                <td className="px-6 py-4 text-base text-gray-500 whitespace-nowrap">
                   {new Date(grant.deadline).toLocaleDateString('en-US', {
                     month: 'short',
                     day: '2-digit',

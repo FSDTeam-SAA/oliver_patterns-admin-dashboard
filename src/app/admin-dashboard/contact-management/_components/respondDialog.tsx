@@ -115,7 +115,7 @@ export default function RespondDialog({
           </Button>
 
           <Button
-            className="bg-[#0C2661]"
+            className="bg-[#0C2661] hover:bg-[#0C2661]/90"
             onClick={handleMarkAsRead}
             disabled={updateStatusMutation.isPending}
           >

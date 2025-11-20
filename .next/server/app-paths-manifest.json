@@ -1,9 +1,7 @@
 {
-  "/(auth)/forgot-password/page": "app/(auth)/forgot-password/page.js",
-  "/(auth)/reset-password/page": "app/(auth)/reset-password/page.js",
   "/(auth)/signin/page": "app/(auth)/signin/page.js",
-  "/(auth)/verify-email/page": "app/(auth)/verify-email/page.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/admin-dashboard/calendar/page": "app/admin-dashboard/calendar/page.js",
   "/admin-dashboard/contact-management/page": "app/admin-dashboard/contact-management/page.js",
   "/admin-dashboard/dashboard/page": "app/admin-dashboard/dashboard/page.js",
   "/admin-dashboard/grant-management/add/page": "app/admin-dashboard/grant-management/add/page.js",

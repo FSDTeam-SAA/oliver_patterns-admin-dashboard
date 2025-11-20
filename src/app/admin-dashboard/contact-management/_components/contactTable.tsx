@@ -146,33 +146,33 @@ export default function ContactTable({
   }
 
   return (
-    <div className="bg-white rounded-lg border">
+    <div className="bg-white rounded-lg border ">
       {/* Table */}
       <div className="overflow-x-auto">
         <table className="w-full text-center">
           <thead className="bg-blue-100 border-b">
             <tr className="text-center">
-              <th className="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">
+              <th className="px-6 py-4 text-base font-medium text-gray-500 uppercase tracking-wider text-center">
                 Name
               </th>
-              <th className="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase tracking-wider">
                 Subject
               </th>
-              <th className="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase tracking-wider">
                 Email
               </th>
-              <th className="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase tracking-wider">
                 Date
               </th>
-              <th className="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase tracking-wider">
                 Status
               </th>
-              <th className="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase tracking-wider">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="bg-white divide-y text-sm divide-gray-200">
             {contacts.map((contact) => (
               <tr
                 key={contact._id}
@@ -184,7 +184,7 @@ export default function ContactTable({
                     <span className="font-medium text-gray-900">
                       {contact.name}
                     </span>
-                    <p className="text-sm text-gray-500 mt-1">
+                    <p className="text-base text-gray-500 mt-1">
                       {contact.companyName}
                     </p>
                   </div>
@@ -193,19 +193,19 @@ export default function ContactTable({
                 {/* Subject */}
                 <td className="px-6 py-4">
                   <div className="max-w-md">
-                    <span className="text-sm text-gray-600 line-clamp-2">
+                    <span className="text-base text-gray-600 line-clamp-2">
                       {contact.subject || '-'}
                     </span>
                   </div>
                 </td>
 
                 {/* Email */}
-                <td className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap">
+                <td className="px-6 py-4 text-base text-gray-600 whitespace-nowrap">
                   {contact.email}
                 </td>
 
                 {/* Date */}
-                <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                <td className="px-6 py-4 text-base text-gray-500 whitespace-nowrap">
                   {contact.createdAt
                     ? new Date(contact.createdAt).toLocaleDateString('en-US', {
                         year: 'numeric',

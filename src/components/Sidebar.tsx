@@ -7,6 +7,7 @@ import {
   Settings,
   Users,
   Bell,
+  Calendar,
 } from 'lucide-react'
 
 import Link from 'next/link'
@@ -19,6 +20,11 @@ const sidebarItems = [
     icon: <LayoutDashboard size={20} />,
     text: 'Dashboard Overview',
     href: '/admin-dashboard/dashboard',
+  },
+  {
+    icon: <Calendar size={20} />,
+    text: 'Calendar',
+    href: '/admin-dashboard/calendar',
   },
   {
     icon: <FileText size={20} />,
@@ -92,7 +98,7 @@ export default function AdminSidebar() {
   }
 
   return (
-    <aside className="w-[300px] bg-sky-100/50 border-r border-gray-200 min-h-screen flex flex-col">
+    <aside className="w-[300px] bg-sky-100/70 border-r border-gray-200 min-h-screen flex flex-col">
       {/* Logo Section */}
       <div className=" flex justify-center pt-5 mb-3">
         <Link href="/admin-dashboard/dashboard">

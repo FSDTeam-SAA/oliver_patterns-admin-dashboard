@@ -71,6 +71,12 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   handler satisfies AppPageConfig<"/verify-email">
 }
 
+// Validate ../../src/app/admin-dashboard/calendar/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/admin-dashboard/calendar/page.js")
+  handler satisfies AppPageConfig<"/admin-dashboard/calendar">
+}
+
 // Validate ../../src/app/admin-dashboard/contact-management/page.tsx
 {
   const handler = {} as typeof import("../../src/app/admin-dashboard/contact-management/page.js")

@@ -3,7 +3,6 @@
 
 import React, { useState } from 'react'
 import { Calendar } from '@/components/ui/calendar'
-import { Card } from '@/components/ui/card'
 import { format } from 'date-fns'
 import { useCalendarStore } from '@/store/calendarStore'
 import { DateRange } from 'react-day-picker'
@@ -33,12 +32,12 @@ export function GrantCalendarView({ grants }: GrantCalendarViewProps) {
   const grantDates = grants.map((grant) => new Date(grant.deadline))
 
   return (
-    <Card className="w-full p-6 shadow-sm border border-gray-200 bg-white">
+    <div>
       {/* <div className="space-y-2">
         <h2 className="text-xl font-semibold text-gray-800">Calendar</h2>
       </div> */}
 
-      <div className="w-full bg-white rounded-lg border border-gray-200 justify-center items-center flex">
+      <div className="w-full bg-slate-100 rounded-lg border border-gray-200 justify-center items-center flex">
         <Calendar
           mode="range"
           selected={dateRange}
@@ -46,36 +45,51 @@ export function GrantCalendarView({ grants }: GrantCalendarViewProps) {
           numberOfMonths={1}
           className="w-full "
           classNames={{
-            months: 'flex w-full',
-            month: 'w-full space-y-4',
-            caption: 'flex justify-between items-center px-4 py-3 border-b',
-            caption_label: 'text-base font-semibold text-gray-700',
+            months: 'flex flex-col md:flex-row w-full gap-6',
 
-            nav: 'flex items-center gap-6 relative w-full',
+            month: 'w-full space-y-4',
+
+            caption:
+              'flex justify-between items-center px-2 md:px-4 py-3 border-b',
+
+            caption_label: 'text-sm md:text-base font-semibold text-gray-700',
+
+            nav: 'flex items-center gap-4 md:gap-6 relative w-full',
+
             nav_button:
-              'h-16 w-16 flex items-center justify-center rounded-md hover:bg-gray-100 text-gray-600 transition',
-            nav_button_previous: 'absolute left-2',
-            nav_button_next: 'absolute right-2',
+              'h-10 w-10 md:h-16 md:w-16 flex items-center justify-center rounded-md hover:bg-gray-100 text-gray-600 transition',
+
+            nav_button_previous: 'absolute left-1 md:left-2',
+            nav_button_next: 'absolute right-1 md:right-2',
 
             table: 'w-full border-collapse',
+
             head_row: 'grid grid-cols-7 border-b bg-gray-50',
+
             head_cell:
-              'text font-medium text-gray-600 py-3 text-center uppercase',
+              'text-[10px] md:text-sm font-medium text-gray-600 py-2 md:py-3 text-center uppercase',
 
             row: 'grid grid-cols-7 border-b last:border-b-0',
-            cell: 'relative p-0 text-center h-16 flex items-center justify-center',
 
-            day: 'h-8 w-16 flex my-4 mx-14 items-center justify-center text-sm font-medium cursor-pointer hover:bg-blue-50 transition-colors text-gray-700',
+            cell: 'relative p-0 text-center h-10 md:h-16 flex items-center justify-center',
+
+            day: 'h-6 w-6 md:h-8 md:w-16 flex my-2 md:my-4 mx-2 md:mx-14 items-center justify-center text-xs md:text-lg font-semibold cursor-pointer hover:bg-blue-50 transition-colors text-gray-700 rounded',
 
             day_selected:
               'bg-blue-100 text-blue-700 font-semibold hover:bg-blue-200',
+
             day_range_middle: 'bg-blue-50 text-blue-700',
+
             day_range_start:
               'bg-blue-200 text-blue-800 font-bold hover:bg-blue-300',
+
             day_range_end:
               'bg-blue-200 text-blue-800 font-bold hover:bg-blue-300',
-            day_today: 'border-2 border-blue-400 text-blue-700 font-bold',
+
+            day_today: 'border border-blue-500 text-blue-700 font-bold',
+
             day_outside: 'opacity-30 text-gray-400 cursor-default',
+
             day_disabled: 'opacity-30 cursor-not-allowed',
           }}
           modifiers={{
@@ -102,6 +116,6 @@ export function GrantCalendarView({ grants }: GrantCalendarViewProps) {
           </p>
         </div>
       )}
-    </Card>
+    </div>
   )
 }

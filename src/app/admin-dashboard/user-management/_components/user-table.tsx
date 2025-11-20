@@ -36,8 +36,6 @@ export default function UserTable({
   currentPage,
   totalPages,
   totalData,
-  hasNextPage,
-  hasPrevPage,
   onPageChange,
 }: UserTableProps) {
   const [selectedUser, setSelectedUser] = useState<User | null>(null)
@@ -64,7 +62,7 @@ export default function UserTable({
     )
   }
 
-  if (!users) {
+  if (!users || users.length === 0) {
     return (
       <div className="text-center py-12 text-gray-500 bg-gray-50 rounded-lg">
         <p className="text-lg">No users found</p>
@@ -72,28 +70,27 @@ export default function UserTable({
     )
   }
 
+  // -------- PAGINATION NUMBER BUILDER --------
   function getPageNumbers(): (number | string)[] {
     const pages: (number | string)[] = []
-    const maxPagesToShow = 5
+    const maxToShow = 5
 
-    if (totalPages <= maxPagesToShow) {
+    if (totalPages <= maxToShow) {
       for (let i = 1; i <= totalPages; i++) pages.push(i)
     } else {
       if (currentPage <= 3) {
-        for (let i = 1; i <= 3; i++) pages.push(i)
-        pages.push('...')
+        pages.push(1, 2, 3)
+        pages.push('…')
         pages.push(totalPages)
       } else if (currentPage >= totalPages - 2) {
         pages.push(1)
-        pages.push('...')
-        for (let i = totalPages - 2; i <= totalPages; i++) pages.push(i)
+        pages.push('…')
+        pages.push(totalPages - 2, totalPages - 1, totalPages)
       } else {
         pages.push(1)
-        pages.push('...')
-        pages.push(currentPage - 1)
-        pages.push(currentPage)
-        pages.push(currentPage + 1)
-        pages.push('...')
+        pages.push('…')
+        pages.push(currentPage - 1, currentPage, currentPage + 1)
+        pages.push('…')
         pages.push(totalPages)
       }
     }
@@ -102,23 +99,24 @@ export default function UserTable({
 
   return (
     <div className="bg-white rounded border">
+      {/* -------- TABLE -------- */}
       <div className="overflow-x-auto">
-        <table className="w-full">
+        <table className="w-full min-w-max">
           <thead className="bg-blue-100 border-b">
             <tr>
-              <th className="px-6 py-4 text-left text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-4 text-left text-sm font-medium text-gray-600 uppercase">
                 Name
               </th>
-              <th className="px-6 py-2 text-center text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-4 text-center text-sm font-medium text-gray-600 uppercase">
                 Role
               </th>
-              <th className="px-6 py-2 text-center text-sm font-medium text-gray-500 uppercase">
-                Active
-              </th>
-              <th className="px-6 py-2 text-center text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-4 text-center text-sm font-medium text-gray-600 uppercase">
                 Subscription
               </th>
-              <th className="px-6 py-2 text-center text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-4 text-center text-sm font-medium text-gray-600 uppercase">
+                Status
+              </th>
+              <th className="px-6 py-4 text-center text-sm font-medium text-gray-600 uppercase">
                 Actions
               </th>
             </tr>
@@ -126,17 +124,17 @@ export default function UserTable({
 
           <tbody className="bg-white divide-y divide-gray-200">
             {users.map((user) => (
-              <tr key={user._id} className="hover:bg-gray-50 transition-colors">
+              <tr key={user._id} className="hover:bg-gray-50 transition">
                 <td className="px-6 py-3">
                   <p className="font-medium text-gray-900">{user.name}</p>
                   <p className="text-sm text-gray-500">{user.email}</p>
                 </td>
 
-                <td className="px-6 py-3 text-center text-sm capitalize">
+                <td className="px-6 py-3 text-center capitalize">
                   {user.role}
                 </td>
 
-                <td className="px-6 py-3 text-center text-sm">
+                <td className="px-6 py-3 text-center">
                   {user.hasActiveSubscription ? 'Active' : 'None'}
                 </td>
 
@@ -152,7 +150,7 @@ export default function UserTable({
                   </span>
                 </td>
 
-                <td className="px-6 py-3 text-center whitespace-nowrap">
+                <td className="px-6 py-3 text-center">
                   <div className="flex justify-center gap-2">
                     <button
                       onClick={() => onView(user)}
@@ -175,19 +173,21 @@ export default function UserTable({
         </table>
       </div>
 
-      {/* Delete Dialog */}
+      {/* -------- DELETE DIALOG -------- */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent>
+        <DialogContent className="max-w-sm">
           <DialogHeader>
             <DialogTitle>Delete User?</DialogTitle>
             <DialogDescription>
               Are you sure you want to delete this user?
             </DialogDescription>
           </DialogHeader>
+
           <DialogFooter>
             <DialogClose asChild>
               <Button variant="outline">Cancel</Button>
             </DialogClose>
+
             <Button variant="destructive" onClick={handleDeleteConfirm}>
               Delete
             </Button>
@@ -195,52 +195,59 @@ export default function UserTable({
         </DialogContent>
       </Dialog>
 
-      {/* Pagination */}
-      {totalPages > 0 && (
-        <div className="bg-white px-12 flex items-center justify-between border-t py-4">
-          <div className="text-md text-gray-600">
-            Showing {(currentPage - 1) * 10 + 1} to{' '}
-            {Math.min(currentPage * 10, totalData)} of {totalData} results
-          </div>
-
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => onPageChange(currentPage - 1)}
-              disabled={!hasPrevPage}
-              className={`px-2 py-1 rounded border ${
-                hasPrevPage ? 'hover:bg-gray-100' : 'opacity-40'
-              }`}
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-
-            {getPageNumbers().map((page, index) => (
-              <button
-                key={index}
-                disabled={page === '...'}
-                onClick={() => typeof page === 'number' && onPageChange(page)}
-                className={`px-3 py-1 rounded text-sm min-w-[32px] transition ${
-                  typeof page === 'number' && page === currentPage
-                    ? '!bg-[#0C2661] !text-white !border-[#0C2661]'
-                    : 'hover:bg-gray-100'
-                }`}
-              >
-                {page}
-              </button>
-            ))}
-
-            <button
-              onClick={() => onPageChange(currentPage + 1)}
-              disabled={!hasNextPage}
-              className={`px-2 py-1 rounded border ${
-                hasNextPage ? 'hover:bg-gray-100' : 'opacity-40'
-              }`}
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
+      {/* -------- PAGINATION -------- */}
+      <div className="bg-white px-8 py-4 flex items-center justify-between border-t">
+        <div className="text-sm text-gray-600">
+          Showing {(currentPage - 1) * 10 + 1} to{' '}
+          {Math.min(currentPage * 10, totalData)} of {totalData} results
         </div>
-      )}
+
+        <div className="flex items-center gap-2">
+          {/* Prev Button */}
+          <button
+            onClick={() => onPageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className={`px-2 py-1 rounded border flex items-center transition ${
+              currentPage > 1
+                ? 'text-gray-700 hover:bg-gray-100'
+                : 'opacity-40 cursor-not-allowed'
+            }`}
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          {/* Page Numbers */}
+          {getPageNumbers().map((page, i) => (
+            <button
+              key={i}
+              onClick={() => typeof page === 'number' && onPageChange(page)}
+              disabled={page === '…'}
+              className={`px-3 py-1 rounded text-sm font-medium min-w-[32px] ${
+                page === currentPage
+                  ? 'bg-[#0C2661] text-white'
+                  : page === '…'
+                  ? 'text-gray-400 cursor-default'
+                  : 'text-gray-700 hover:bg-gray-100'
+              }`}
+            >
+              {page}
+            </button>
+          ))}
+
+          {/* Next Button */}
+          <button
+            onClick={() => onPageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className={`px-2 py-1 rounded border flex items-center transition ${
+              currentPage < totalPages
+                ? 'text-gray-700 hover:bg-gray-100'
+                : 'opacity-40 cursor-not-allowed'
+            }`}
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

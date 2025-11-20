@@ -13,6 +13,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import Image from 'next/image'
+import TableSkeleton from '@/components/reusable/TableSkeleton'
 
 interface GrantTableProps {
   grants: any[]
@@ -87,10 +88,7 @@ export function GrantTable({
   if (isLoading) {
     return (
       <Card className="w-full p-6">
-        <div className="text-center py-8">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="text-gray-500 mt-2">Loading grants...</p>
-        </div>
+        <TableSkeleton />
       </Card>
     )
   }

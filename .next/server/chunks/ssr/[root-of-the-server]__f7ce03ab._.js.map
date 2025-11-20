@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":["file:///home/kmsaifullah/Desktop/projects/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/calendar/page.tsx"],"sourcesContent":["import React from 'react'\n\nconst page = () => {\n  return <div></div>\n}\n\nexport default page\n"],"names":[],"mappings":";;;;;;AAEA,MAAM,OAAO;IACX,qBAAO,2SAAC;;;;;AACV;uCAEe","debugId":null}}]
-}

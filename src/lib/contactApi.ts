@@ -36,8 +36,8 @@ export const useGetContacts = (
       return response.json()
     },
     enabled: !!accessToken,
-    staleTime: 0, // Data immediately stale hoye jabe
-    refetchOnMount: true, // Mount e refetch korbe
+    staleTime: 0,
+    refetchOnMount: true,
   })
 }
 
@@ -47,9 +47,7 @@ export const useGetSingleContact = (contactId: string, accessToken: string) => {
     queryKey: ['contact', contactId],
     queryFn: async () => {
       const response = await fetch(`${API_BASE_URL}/contact/${contactId}`, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
+        headers: { Authorization: `Bearer ${accessToken}` },
       })
       if (!response.ok) throw new Error('Failed to fetch contact')
       return response.json()
@@ -61,7 +59,12 @@ export const useGetSingleContact = (contactId: string, accessToken: string) => {
 // Delete contact
 export const useDeleteContact = (
   accessToken: string,
-  options?: UseMutationOptions<DeleteContactResponse, Error, string>
+  options?: UseMutationOptions<
+    DeleteContactResponse,
+    Error,
+    string,
+    { previousContacts: [readonly unknown[], ContactsResponse | undefined][] }
+  >
 ) => {
   const queryClient = useQueryClient()
 
@@ -69,24 +72,25 @@ export const useDeleteContact = (
     mutationFn: async (contactId: string) => {
       const response = await fetch(`${API_BASE_URL}/contact/${contactId}`, {
         method: 'DELETE',
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
+        headers: { Authorization: `Bearer ${accessToken}` },
       })
       if (!response.ok) throw new Error('Failed to delete contact')
       return response.json()
     },
-    // Optimistic update - delete korar agei UI theke soria dibe
-    onMutate: async (contactId) => {
-      // Cancel outgoing refetches
+
+    // FIXED: Typed onMutate return
+    onMutate: async (
+      contactId: string
+    ): Promise<{
+      previousContacts: [readonly unknown[], ContactsResponse | undefined][]
+    }> => {
       await queryClient.cancelQueries({ queryKey: ['contacts'] })
 
-      // Snapshot of previous value
-      const previousContacts = queryClient.getQueriesData<ContactsResponse>({
-        queryKey: ['contacts'],
-      })
+      const previousContacts =
+        queryClient.getQueriesData<ContactsResponse>({
+          queryKey: ['contacts'],
+        }) || []
 
-      // Optimistically update - UI theke turei remove
       queryClient.setQueriesData<ContactsResponse>(
         { queryKey: ['contacts'] },
         (old) => {
@@ -109,7 +113,7 @@ export const useDeleteContact = (
 
       return { previousContacts }
     },
-    // Error hole rollback
+
     onError: (err, contactId, context) => {
       if (context?.previousContacts) {
         context.previousContacts.forEach(([queryKey, data]) => {
@@ -117,10 +121,11 @@ export const useDeleteContact = (
         })
       }
     },
-    // Success hole refetch kore confirm
+
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['contacts'] })
     },
+
     ...options,
   })
 }
@@ -131,7 +136,11 @@ export const useUpdateContactStatus = (
   options?: UseMutationOptions<
     SingleContactResponse,
     Error,
-    { contactId: string; status: 'new' | 'read' | 'unread' }
+    { contactId: string; status: 'new' | 'read' | 'unread' },
+    {
+      previousContacts: [readonly unknown[], ContactsResponse | undefined][]
+      previousContact: SingleContactResponse | undefined
+    }
   >
 ) => {
   const queryClient = useQueryClient()
@@ -155,22 +164,28 @@ export const useUpdateContactStatus = (
       if (!response.ok) throw new Error('Failed to update contact status')
       return response.json()
     },
-    // Optimistic update - status change agei dekhabe
-    onMutate: async ({ contactId, status }) => {
-      // Cancel outgoing refetches
+
+    // FIXED: Explicit return type
+    onMutate: async ({
+      contactId,
+      status,
+    }): Promise<{
+      previousContacts: [readonly unknown[], ContactsResponse | undefined][]
+      previousContact: SingleContactResponse | undefined
+    }> => {
       await queryClient.cancelQueries({ queryKey: ['contacts'] })
       await queryClient.cancelQueries({ queryKey: ['contact', contactId] })
 
-      // Snapshot of previous values
-      const previousContacts = queryClient.getQueriesData<ContactsResponse>({
-        queryKey: ['contacts'],
-      })
+      const previousContacts =
+        queryClient.getQueriesData<ContactsResponse>({
+          queryKey: ['contacts'],
+        }) || []
+
       const previousContact = queryClient.getQueryData<SingleContactResponse>([
         'contact',
         contactId,
       ])
 
-      // Optimistically update to the new status - UI te instant change
       queryClient.setQueriesData<ContactsResponse>(
         { queryKey: ['contacts'] },
         (old) => {
@@ -187,25 +202,21 @@ export const useUpdateContactStatus = (
         }
       )
 
-      // Update single contact cache o
       if (previousContact) {
-        queryClient.setQueryData<SingleContactResponse>(
-          ['contact', contactId],
-          {
-            ...previousContact,
-            data: {
-              contact: {
-                ...previousContact.data.contact,
-                status,
-              },
+        queryClient.setQueryData(['contact', contactId], {
+          ...previousContact,
+          data: {
+            contact: {
+              ...previousContact.data.contact,
+              status,
             },
-          }
-        )
+          },
+        })
       }
 
       return { previousContacts, previousContact }
     },
-    // Error hole rollback
+
     onError: (err, variables, context) => {
       if (context?.previousContacts) {
         context.previousContacts.forEach(([queryKey, data]) => {
@@ -219,11 +230,12 @@ export const useUpdateContactStatus = (
         )
       }
     },
-    // Success hole refetch kore confirm
+
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['contacts'] })
       queryClient.invalidateQueries({ queryKey: ['contact'] })
     },
+
     ...options,
   })
 }

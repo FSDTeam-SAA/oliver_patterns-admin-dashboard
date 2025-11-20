@@ -1,0 +1,26 @@
+{
+  "pages": {
+    "/admin-dashboard/subscription/pricing-plan/page": [
+      "static/chunks/3efb5843aafcf420.js",
+      "static/chunks/a47a03e8d5e5bb27.js",
+      "static/chunks/6df3692223be8283.css",
+      "static/chunks/b8b5cef57975fda2.js",
+      "static/chunks/8cd827c583561993.js",
+      "static/chunks/9ad978c988484864.js",
+      "static/chunks/57c784c8c9f0fc39.js",
+      "static/chunks/f0ada9208ad6d909.js",
+      "static/chunks/7c360b962141542b.js",
+      "static/chunks/95fb0c230141ea4f.js",
+      "static/chunks/9e9699788506afb2.js",
+      "static/chunks/6e9755099c4728c0.js",
+      "static/chunks/27aee7dffc675ed3.js",
+      "static/chunks/8fe535d6b2a381a5.js",
+      "static/chunks/f38bd65ac61826cb.js",
+      "static/chunks/bfd927b8c4ede3ca.js",
+      "static/chunks/06bc3afe270c96a3.js",
+      "static/chunks/dc1d3239c29f6a49.js",
+      "static/chunks/88d56222549b8a3c.js",
+      "static/chunks/turbopack-ff46a1a181c5b146.js"
+    ]
+  }
+}

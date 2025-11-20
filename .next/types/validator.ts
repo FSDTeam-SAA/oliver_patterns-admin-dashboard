@@ -119,6 +119,18 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   handler satisfies AppPageConfig<"/admin-dashboard/settings">
 }
 
+// Validate ../../src/app/admin-dashboard/subscription/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/admin-dashboard/subscription/page.js")
+  handler satisfies AppPageConfig<"/admin-dashboard/subscription">
+}
+
+// Validate ../../src/app/admin-dashboard/subscription/pricing-plan/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/admin-dashboard/subscription/pricing-plan/page.js")
+  handler satisfies AppPageConfig<"/admin-dashboard/subscription/pricing-plan">
+}
+
 // Validate ../../src/app/admin-dashboard/user-management/page.tsx
 {
   const handler = {} as typeof import("../../src/app/admin-dashboard/user-management/page.js")

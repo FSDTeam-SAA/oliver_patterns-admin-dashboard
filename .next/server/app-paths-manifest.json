@@ -1,5 +1,8 @@
 {
+  "/(auth)/forgot-password/page": "app/(auth)/forgot-password/page.js",
+  "/(auth)/reset-password/page": "app/(auth)/reset-password/page.js",
   "/(auth)/signin/page": "app/(auth)/signin/page.js",
+  "/(auth)/verify-email/page": "app/(auth)/verify-email/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/admin-dashboard/calendar/page": "app/admin-dashboard/calendar/page.js",
   "/admin-dashboard/contact-management/page": "app/admin-dashboard/contact-management/page.js",
@@ -9,6 +12,8 @@
   "/admin-dashboard/grant-management/page": "app/admin-dashboard/grant-management/page.js",
   "/admin-dashboard/page": "app/admin-dashboard/page.js",
   "/admin-dashboard/settings/page": "app/admin-dashboard/settings/page.js",
+  "/admin-dashboard/subscription/page": "app/admin-dashboard/subscription/page.js",
+  "/admin-dashboard/subscription/pricing-plan/page": "app/admin-dashboard/subscription/pricing-plan/page.js",
   "/admin-dashboard/user-management/page": "app/admin-dashboard/user-management/page.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",

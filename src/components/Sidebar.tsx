@@ -39,7 +39,7 @@ const sidebarItems = [
   {
     icon: <Bell size={20} />,
     text: 'Subscription Management',
-    href: '/admin-dashboard/podcast-management',
+    href: '/admin-dashboard/subscription',
   },
   {
     icon: <MessageSquare size={20} />,

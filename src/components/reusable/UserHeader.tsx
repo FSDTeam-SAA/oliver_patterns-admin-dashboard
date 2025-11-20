@@ -30,6 +30,12 @@ export default function UserHeader() {
         'Keep track of your saved grants and important deadlines at a glance.',
       ]
 
+    if (pathname.includes('/admin-dashboard/subscription'))
+      return [
+        'Subscription Management',
+        'Manage subscription plans and view transaction history.',
+      ]
+
     if (pathname.includes('/admin-dashboard/subscription-management'))
       return [
         'Subscription Management',

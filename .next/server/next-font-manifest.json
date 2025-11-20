@@ -1,6 +1,15 @@
 {
   "app": {
+    "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/(auth)/forgot-password/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/(auth)/reset-password/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
     "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/(auth)/signin/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/(auth)/verify-email/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
     "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/_not-found/page": [
@@ -28,6 +37,12 @@
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
     "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/settings/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/subscription/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/subscription/pricing-plan/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
     "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/page": [

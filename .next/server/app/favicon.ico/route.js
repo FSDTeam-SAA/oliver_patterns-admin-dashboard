@@ -1,6 +1,10 @@
 var R=require("../../chunks/[turbopack]_runtime.js")("server/app/favicon.ico/route.js")
-R.c("server/chunks/2d19f_next_20f1047b._.js")
-R.c("server/chunks/[root-of-the-server]__910b88c4._.js")
-R.m("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/.next-internal/server/app/favicon.ico/route/actions.js [app-rsc] (server actions loader, ecmascript)")
-R.m("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/favicon--route-entry.js [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)")
-module.exports=R.m("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/favicon--route-entry.js [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)").exports
+R.c("server/chunks/[root-of-the-server]__195332b9._.js")
+R.c("server/chunks/2d19f_next_dist_b68b124a._.js")
+R.c("server/chunks/[root-of-the-server]__c6d46b2f._.js")
+R.c("server/chunks/2d19f_next_dist_c451e66c._.js")
+R.c("server/chunks/2d19f_next_dist_875112b8._.js")
+R.c("server/chunks/2d19f_next_ec6da681._.js")
+R.m(60195)
+R.m(15572)
+module.exports=R.m(15572).exports

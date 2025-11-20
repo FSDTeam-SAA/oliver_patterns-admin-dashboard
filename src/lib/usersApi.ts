@@ -1,7 +1,61 @@
 // ==================== FILE: lib/userApi.ts ====================
-/*
+
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { User, UsersResponse } from '../../types/userTypes'
+
+// Types
+export interface Address {
+  country: string
+  cityState: string
+  roadArea: string
+  postalCode: string
+  taxId: string
+}
+
+export interface User {
+  _id: string
+  name: string
+  email: string
+  dob: string | null
+  gender: string | null
+  planName: string | null
+  role: 'ADMIN' | 'USER'
+  wishlist: string[]
+  stripeAccountId: string | null
+  bio: string
+  profileImage: string
+  multiProfileImage: string[]
+  pdfFile: string
+  otp: string | null
+  otpExpires: string | null
+  otpVerified: boolean
+  resetExpires: string | null
+  isVerified: boolean
+  refreshToken: string
+  hasActiveSubscription: boolean
+  subscriptionExpireDate: string | null
+  blockedUsers: string[]
+  language: string
+  address: Address
+  isActive: boolean
+  username?: string
+}
+
+export interface PaginationInfo {
+  currentPage: number
+  totalPages: number
+  totalData: number
+  hasNextPage: boolean
+  hasPrevPage: boolean
+}
+
+export interface UsersResponse {
+  status: boolean
+  message: string
+  data: {
+    users: User[]
+    paginationInfo: PaginationInfo
+  }
+}
 
 const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api'
@@ -16,7 +70,7 @@ export const useGetUsers = (
     queryKey: ['users', page, limit],
     queryFn: async () => {
       const response = await fetch(
-        `${API_BASE_URL}/users?page=${page}&limit=${limit}`,
+        `${API_BASE_URL}/user/all-users?page=${page}&limit=${limit}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -30,12 +84,12 @@ export const useGetUsers = (
   })
 }
 
-// Fetch single user
+// Fetch single user by ID
 export const useGetSingleUser = (userId: string, accessToken: string) => {
   return useQuery<{ user: User }>({
     queryKey: ['user', userId],
     queryFn: async () => {
-      const response = await fetch(`${API_BASE_URL}/users/${userId}`, {
+      const response = await fetch(`${API_BASE_URL}/user/${userId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -53,7 +107,7 @@ export const useAddUser = (accessToken: string) => {
 
   return useMutation({
     mutationFn: async (data: Partial<User>) => {
-      const response = await fetch(`${API_BASE_URL}/users`, {
+      const response = await fetch(`${API_BASE_URL}/user`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -82,7 +136,7 @@ export const useUpdateUser = (accessToken: string) => {
       userId: string
       data: Partial<User>
     }) => {
-      const response = await fetch(`${API_BASE_URL}/users/${userId}`, {
+      const response = await fetch(`${API_BASE_URL}/user/${userId}`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -105,7 +159,7 @@ export const useDeleteUser = (accessToken: string) => {
 
   return useMutation({
     mutationFn: async (userId: string) => {
-      const response = await fetch(`${API_BASE_URL}/users/${userId}`, {
+      const response = await fetch(`${API_BASE_URL}/user/${userId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -132,7 +186,7 @@ export const useUpdateUserStatus = (accessToken: string) => {
       userId: string
       status: 'Active' | 'Inactive'
     }) => {
-      const response = await fetch(`${API_BASE_URL}/users/${userId}/status`, {
+      const response = await fetch(`${API_BASE_URL}/user/${userId}/status`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -148,4 +202,3 @@ export const useUpdateUserStatus = (accessToken: string) => {
     },
   })
 }
-*/

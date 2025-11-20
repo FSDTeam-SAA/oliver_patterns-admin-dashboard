@@ -5,11 +5,13 @@ import React, { useState } from 'react'
 import {
   Trash2,
   Eye,
-  MessageSquare,
   ChevronLeft,
   ChevronRight,
+  AlertCircle,
+  Mail,
+  MailOpen,
+  MessageSquare,
 } from 'lucide-react'
-
 import {
   Dialog,
   DialogContent,
@@ -21,6 +23,7 @@ import {
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import { Contact } from '../../../../../types/contact'
+import TableSkeleton from '@/components/reusable/TableSkeleton'
 
 interface ContactTableProps {
   contacts: Contact[]
@@ -28,6 +31,7 @@ interface ContactTableProps {
   onRespond: (contact: Contact) => void
   onDelete: (contactId: string) => void
   isLoading?: boolean
+  error?: string
   currentPage: number
   totalPages: number
   totalData: number
@@ -42,6 +46,7 @@ export default function ContactTable({
   onRespond,
   onDelete,
   isLoading,
+  error,
   currentPage,
   totalPages,
   totalData,
@@ -72,15 +77,25 @@ export default function ContactTable({
 
   if (isLoading) {
     return (
-      <div className="text-center py-12">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+      <>
+        <TableSkeleton />
+      </>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="text-center py-12 bg-red-50 rounded-lg">
+        <AlertCircle className="w-12 h-12 text-red-500 mx-auto mb-4" />
+        <p className="text-lg text-red-700">Error loading contacts</p>
+        <p className="text-sm text-red-600 mt-1">{error}</p>
       </div>
     )
   }
 
   if (!contacts || contacts.length === 0) {
     return (
-      <div className="text-center py-8 text-gray-500 bg-gray-50 rounded-lg">
+      <div className="text-center py-12 text-gray-500 bg-gray-50 rounded-lg">
         <p className="text-lg">No contacts found</p>
         <p className="text-sm mt-1">New contacts will appear here</p>
       </div>
@@ -117,34 +132,47 @@ export default function ContactTable({
     return pages
   }
 
+  const getStatusBadge = (status: string) => {
+    switch (status) {
+      case 'new':
+        return 'bg-blue-100 text-blue-800'
+      case 'unread':
+        return 'bg-green-100 text-green-800'
+      case 'read':
+        return 'bg-gray-100 text-gray-800'
+      default:
+        return 'bg-gray-100 text-gray-800'
+    }
+  }
+
   return (
-    <div className="bg-white rounded-lg border">
+    <div className="bg-white rounded-lg border ">
       {/* Table */}
       <div className="overflow-x-auto">
         <table className="w-full text-center">
-          <thead className="bg-gray-50 border-b">
+          <thead className="bg-blue-100 border-b">
             <tr className="text-center">
-              <th className="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">
+              <th className="px-6 py-4 text-base font-medium text-gray-500 uppercase tracking-wider text-center">
                 Name
               </th>
-              <th className="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Message
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase tracking-wider">
+                Subject
               </th>
-              <th className="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase tracking-wider">
                 Email
               </th>
-              <th className="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase tracking-wider">
                 Date
               </th>
-              <th className="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase tracking-wider">
                 Status
               </th>
-              <th className="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-center text-base font-medium text-gray-500 uppercase tracking-wider">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="bg-white divide-y text-sm divide-gray-200">
             {contacts.map((contact) => (
               <tr
                 key={contact._id}
@@ -154,30 +182,30 @@ export default function ContactTable({
                 <td className="px-6 py-4">
                   <div className="max-w-xs">
                     <span className="font-medium text-gray-900">
-                      {contact.fullName}
+                      {contact.name}
                     </span>
-                    <p className="text-sm text-gray-500 mt-1">
-                      {contact.occupation}
+                    <p className="text-base text-gray-500 mt-1">
+                      {contact.companyName}
                     </p>
                   </div>
                 </td>
 
-                {/* Message */}
+                {/* Subject */}
                 <td className="px-6 py-4">
                   <div className="max-w-md">
-                    <span className="text-sm text-gray-600 line-clamp-2">
-                      {contact.message || '-'}
+                    <span className="text-base text-gray-600 line-clamp-2">
+                      {contact.subject || '-'}
                     </span>
                   </div>
                 </td>
 
                 {/* Email */}
-                <td className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap">
+                <td className="px-6 py-4 text-base text-gray-600 whitespace-nowrap">
                   {contact.email}
                 </td>
 
                 {/* Date */}
-                <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                <td className="px-6 py-4 text-base text-gray-500 whitespace-nowrap">
                   {contact.createdAt
                     ? new Date(contact.createdAt).toLocaleDateString('en-US', {
                         year: 'numeric',
@@ -190,18 +218,16 @@ export default function ContactTable({
                 {/* Status */}
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span
-                    className={`px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                      contact.status === 'New'
-                        ? 'bg-blue-100 text-blue-800'
-                        : 'bg-green-100 text-green-800'
-                    }`}
+                    className={`px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusBadge(
+                      contact.status
+                    )}`}
                   >
-                    {contact.status}
+                    {contact.status === 'read' ? <MailOpen /> : <Mail />}
                   </span>
                 </td>
 
                 {/* Actions */}
-                <td className="px-6 py-4 whitespace-nowrap ">
+                <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex gap-2 justify-center">
                     <button
                       onClick={() => onView(contact)}
@@ -213,17 +239,8 @@ export default function ContactTable({
 
                     <button
                       onClick={() => onRespond(contact)}
-                      className={`transition-colors p-1 rounded cursor-pointer ${
-                        contact.status === 'New'
-                          ? 'text-green-600 hover:text-green-800 cursor-pointer'
-                          : 'text-gray-400 cursor-not-allowed'
-                      }`}
-                      title={
-                        contact.status === 'New'
-                          ? 'Respond'
-                          : 'Already Responded'
-                      }
-                      disabled={contact.status === 'Respond'}
+                      className="text-green-600 hover:text-green-800 transition-colors p-1 rounded cursor-pointer"
+                      title="Respond"
                     >
                       <MessageSquare className="w-5 h-5" />
                     </button>
@@ -250,7 +267,7 @@ export default function ContactTable({
             <DialogTitle>Confirm Deletion</DialogTitle>
             <DialogDescription>
               Are you sure you want to delete the contact from &quot;
-              {selectedContact?.fullName}&quot;? This action cannot be undone.
+              {selectedContact?.name}&quot;? This action cannot be undone.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>

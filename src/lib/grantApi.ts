@@ -1,12 +1,26 @@
-// ==================== FILE: lib/grantApi.ts (API Integration Template) ====================
-// This is a template for future API integration.
-// Currently using demo data from demoGrants.json
-/*
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// lib/grantApi.ts
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { Grant, GrantsResponse } from '@/../types/grant'
 
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api'
+  process.env.NEXT_PUBLIC_API_URL || 'https://api.example.com/api'
+
+interface GrantsResponse {
+  status: boolean
+  message: string
+  data: {
+    items: any[]
+    total: number
+    page: number
+    limit: number
+  }
+}
+
+interface SingleGrantResponse {
+  status: boolean
+  message: string
+  data: any
+}
 
 // Fetch all grants with pagination
 export const useGetGrants = (
@@ -18,7 +32,7 @@ export const useGetGrants = (
     queryKey: ['grants', page, limit],
     queryFn: async () => {
       const response = await fetch(
-        `${API_BASE_URL}/grants?page=${page}&limit=${limit}`,
+        `${API_BASE_URL}/grant?page=${page}&limit=${limit}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -34,10 +48,10 @@ export const useGetGrants = (
 
 // Fetch single grant
 export const useGetSingleGrant = (grantId: string, accessToken: string) => {
-  return useQuery<{ grant: Grant }>({
+  return useQuery<SingleGrantResponse>({
     queryKey: ['grant', grantId],
     queryFn: async () => {
-      const response = await fetch(`${API_BASE_URL}/grants/${grantId}`, {
+      const response = await fetch(`${API_BASE_URL}/grant/${grantId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -54,13 +68,13 @@ export const useAddGrant = (accessToken: string) => {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: async (data: FormData) => {
-      const response = await fetch(`${API_BASE_URL}/grants`, {
+    mutationFn: async (formData: FormData) => {
+      const response = await fetch(`${API_BASE_URL}/grant`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
-        body: data,
+        body: formData,
       })
       if (!response.ok) throw new Error('Failed to add grant')
       return response.json()
@@ -78,17 +92,17 @@ export const useUpdateGrant = (accessToken: string) => {
   return useMutation({
     mutationFn: async ({
       grantId,
-      data,
+      formData,
     }: {
       grantId: string
-      data: FormData
+      formData: FormData
     }) => {
-      const response = await fetch(`${API_BASE_URL}/grants/${grantId}`, {
+      const response = await fetch(`${API_BASE_URL}/grant/${grantId}`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
-        body: data,
+        body: formData,
       })
       if (!response.ok) throw new Error('Failed to update grant')
       return response.json()
@@ -105,7 +119,7 @@ export const useDeleteGrant = (accessToken: string) => {
 
   return useMutation({
     mutationFn: async (grantId: string) => {
-      const response = await fetch(`${API_BASE_URL}/grants/${grantId}`, {
+      const response = await fetch(`${API_BASE_URL}/grant/${grantId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -118,4 +132,4 @@ export const useDeleteGrant = (accessToken: string) => {
       queryClient.invalidateQueries({ queryKey: ['grants'] })
     },
   })
-} */
+}

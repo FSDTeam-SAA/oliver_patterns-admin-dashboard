@@ -2628,6 +2628,10 @@ function getImageProps(imgProps) {
             "domains": ("TURBOPACK compile-time value", []),
             "remotePatterns": ("TURBOPACK compile-time value", [
                 ("TURBOPACK compile-time value", {
+                    "protocol": ("TURBOPACK compile-time value", "http"),
+                    "hostname": ("TURBOPACK compile-time value", "res.cloudinary.com")
+                }),
+                ("TURBOPACK compile-time value", {
                     "protocol": ("TURBOPACK compile-time value", "https"),
                     "hostname": ("TURBOPACK compile-time value", "res.cloudinary.com")
                 })

@@ -73,8 +73,12 @@ export function ProfileImageUpload({
       </div>
       <div>
         <h3 className="font-semibold text-lg">Your Profile Picture</h3>
-        <p className="text-sm text-gray-500 mt-1">PNG, JPG up to 10MB</p>
-        <Button onClick={onUpload} disabled={isUpdating} className="mt-3">
+        <p className="text-sm text-gray-500 mt-1">PNG, JPG, Webp to 10MB</p>
+        <Button
+          onClick={onUpload}
+          disabled={isUpdating}
+          className="mt-3 bg-[#0C2661]"
+        >
           {isUpdating ? (
             <>
               <Loader2 className="w-4 h-4 mr-2 animate-spin" />

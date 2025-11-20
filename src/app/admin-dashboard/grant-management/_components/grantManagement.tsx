@@ -1,11 +1,11 @@
-// ==================== FILE: app/admin-dashboard/grant-management/_components/GrantManagement.tsx ====================
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Plus, ChevronRight } from 'lucide-react'
+import { Card, CardContent } from '@/components/ui/card'
+import { Plus } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -13,34 +13,46 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import GrantTable from '../_components/grantTable'
-import { Grant } from '../../../../../types/grant'
-import { demoGrantsData } from '@/../data/demoGrants'
+import { useGetGrants, useDeleteGrant } from '@/lib/grantApi'
 import { toast } from 'sonner'
+import { useSession } from 'next-auth/react'
+import Image from 'next/image'
 
 export default function GrantManagement() {
   const router = useRouter()
   const [currentPage, setCurrentPage] = useState(1)
   const [isDetailsOpen, setIsDetailsOpen] = useState(false)
-  const [viewingGrant, setViewingGrant] = useState<Grant | null>(null)
-  const [grants, setGrants] = useState(demoGrantsData.grants)
+  const [viewingGrant, setViewingGrant] = useState<any | null>(null)
+  const cu = useSession()
+
+  // Get access token from localStorage or your auth context
+  const accessToken = cu?.data?.user?.accessToken || ''
+
+  // Fetch grants using React Query
+  const { data, isLoading, error } = useGetGrants(accessToken, currentPage, 10)
+  const deleteGrantMutation = useDeleteGrant(accessToken)
 
   const handleAddGrant = () => {
     router.push('/admin-dashboard/grant-management/add')
   }
 
-  const handleEditGrant = (grant: Grant) => {
+  const handleEditGrant = (grant: any) => {
     router.push(`/admin-dashboard/grant-management/edit/${grant._id}`)
   }
 
-  const handleViewGrant = (grant: Grant) => {
+  const handleViewGrant = (grant: any) => {
     setViewingGrant(grant)
     setIsDetailsOpen(true)
   }
 
-  const handleDeleteGrant = (grantId: string) => {
-    // Demo: Remove from local state
-    setGrants(grants.filter((g) => g._id !== grantId))
-    toast.success('Grant deleted successfully')
+  const handleDeleteGrant = async (grantId: string) => {
+    try {
+      await deleteGrantMutation.mutateAsync(grantId)
+      toast.success('Grant deleted successfully')
+    } catch (error) {
+      toast.error('Failed to delete grant')
+      console.error('Delete error:', error)
+    }
   }
 
   const handlePageChange = (page: number) => {
@@ -48,7 +60,28 @@ export default function GrantManagement() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const pagination = demoGrantsData.pagination
+  // Handle error state
+  if (error) {
+    return (
+      <div className="bg-gray-50">
+        <div className="w-full mx-auto text-center py-12">
+          <p className="text-red-500 text-lg">Failed to load grants</p>
+          <Button onClick={() => window.location.reload()} className="mt-4">
+            Retry
+          </Button>
+        </div>
+      </div>
+    )
+  }
+
+  const grants = data?.data.items || []
+  const pagination = {
+    currentPage: data?.data.page || 1,
+    totalPages: Math.ceil((data?.data.total || 0) / 10),
+    totalData: data?.data.total || 0,
+    hasNextPage: (data?.data.page || 1) * 10 < (data?.data.total || 0),
+    hasPrevPage: (data?.data.page || 1) > 1,
+  }
 
   return (
     <div className="bg-gray-50">
@@ -68,20 +101,14 @@ export default function GrantManagement() {
 
         {/* Main Content */}
         <Card className="py-0">
-          {/* <CardHeader>
-            <CardTitle>Grants Management</CardTitle>
-            <p className="text-sm text-gray-500">
-              Manage all grants in the system
-            </p>
-          </CardHeader> */}
           <CardContent className="p-0">
             <GrantTable
               grants={grants}
               onView={handleViewGrant}
               onEdit={handleEditGrant}
               onDelete={handleDeleteGrant}
-              isLoading={false}
-              currentPage={currentPage}
+              isLoading={isLoading}
+              currentPage={pagination.currentPage}
               totalPages={pagination.totalPages}
               totalData={pagination.totalData}
               hasNextPage={pagination.hasNextPage}
@@ -93,8 +120,8 @@ export default function GrantManagement() {
 
         {/* View Details Dialog */}
         <Dialog open={isDetailsOpen} onOpenChange={setIsDetailsOpen}>
-          <DialogContent className="!max-w-4xl w-full rounded-xl shadow-lg">
-            <DialogHeader className=" bg-white">
+          <DialogContent className="!max-w-4xl w-full rounded-xl shadow-lg h-[90vh] overflow-y-auto">
+            <DialogHeader className="bg-white sticky top-0 z-10 pb-4">
               <DialogTitle className="text-2xl font-semibold text-gray-900">
                 Grant Details
               </DialogTitle>
@@ -107,6 +134,7 @@ export default function GrantManagement() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">
                     {viewingGrant.title}
                   </h3>
+
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <span className="font-semibold text-gray-700">Type:</span>
@@ -114,6 +142,7 @@ export default function GrantManagement() {
                         {viewingGrant.type}
                       </span>
                     </div>
+
                     <div>
                       <span className="font-semibold text-gray-700">
                         Funding:
@@ -122,23 +151,32 @@ export default function GrantManagement() {
                         {viewingGrant.funding}
                       </span>
                     </div>
+
                     <div>
                       <span className="font-semibold text-gray-700">
                         Deadline:
                       </span>
                       <span className="ml-2 text-gray-600">
-                        {viewingGrant.deadline}
+                        {new Date(viewingGrant.deadline).toLocaleDateString(
+                          'en-US',
+                          {
+                            month: 'short',
+                            day: '2-digit',
+                            year: 'numeric',
+                          }
+                        )}
                       </span>
                     </div>
+
                     <div>
                       <span className="font-semibold text-gray-700">
                         Status:
                       </span>
                       <span
                         className={`ml-2 px-3 py-1 rounded-full text-xs font-medium ${
-                          viewingGrant.status === 'Open'
+                          viewingGrant.status === 'open'
                             ? 'bg-green-100 text-green-800'
-                            : viewingGrant.status === 'Upcoming'
+                            : viewingGrant.status === 'upcoming'
                             ? 'bg-blue-100 text-blue-800'
                             : 'bg-red-100 text-red-800'
                         }`}
@@ -146,25 +184,33 @@ export default function GrantManagement() {
                         {viewingGrant.status}
                       </span>
                     </div>
+
+                    <div>
+                      <span className="font-semibold text-gray-700">
+                        Location:
+                      </span>
+                      <span className="ml-2 text-gray-600">
+                        {viewingGrant.location}
+                      </span>
+                    </div>
+
+                    <div>
+                      <span className="font-semibold text-gray-700">
+                        Industry:
+                      </span>
+                      <span className="ml-2 text-gray-600">
+                        {viewingGrant.industry}
+                      </span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Eligibility */}
+                {/* Activity */}
                 <div>
                   <h4 className="font-semibold text-lg mb-2 text-gray-900">
-                    Eligibility Entities
+                    Activity
                   </h4>
-                  <p className="text-gray-700">{viewingGrant.eligibility}</p>
-                </div>
-
-                {/* Application Process */}
-                <div>
-                  <h4 className="font-semibold text-lg mb-2 text-gray-900">
-                    Application Process
-                  </h4>
-                  <p className="text-gray-700">
-                    {viewingGrant.applicationProcess}
-                  </p>
+                  <p className="text-gray-700">{viewingGrant.activity}</p>
                 </div>
 
                 {/* Description */}
@@ -176,6 +222,47 @@ export default function GrantManagement() {
                     {viewingGrant.description}
                   </p>
                 </div>
+
+                {/* Image */}
+                {viewingGrant.imageUrl && (
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2 text-gray-900">
+                      Image
+                    </h4>
+                    <Image
+                      src={viewingGrant.imageUrl}
+                      alt={viewingGrant.title}
+                      width={600}
+                      height={400}
+                      className="w-full max-w-md rounded-lg"
+                    />
+                  </div>
+                )}
+
+                {/* Files */}
+                {viewingGrant.fileUrls?.length > 0 && (
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2 text-gray-900">
+                      Attachments
+                    </h4>
+                    <ul className="space-y-2">
+                      {viewingGrant.fileUrls.map(
+                        (url: string, index: string) => (
+                          <li key={index}>
+                            <a
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:underline"
+                            >
+                              Document {index + 1}
+                            </a>
+                          </li>
+                        )
+                      )}
+                    </ul>
+                  </div>
+                )}
               </div>
             )}
           </DialogContent>

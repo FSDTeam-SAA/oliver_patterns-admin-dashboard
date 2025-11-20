@@ -61,6 +61,10 @@
       "contentDispositionType": "attachment",
       "remotePatterns": [
         {
+          "protocol": "http",
+          "hostname": "res.cloudinary.com"
+        },
+        {
           "protocol": "https",
           "hostname": "res.cloudinary.com"
         }
@@ -295,8 +299,8 @@
       "root": "/home/kmsaifullah/Desktop/projects"
     }
   },
-  "appDir": "/home/kmsaifullah/Desktop/projects/BeUnburdened_admin_dashboard",
-  "relativeAppDir": "BeUnburdened_admin_dashboard",
+  "appDir": "/home/kmsaifullah/Desktop/projects/oliverA_patterns/oliver_patterns-admin-dashboard",
+  "relativeAppDir": "oliverA_patterns/oliver_patterns-admin-dashboard",
   "files": [
     ".next/routes-manifest.json",
     ".next/server/pages-manifest.json",

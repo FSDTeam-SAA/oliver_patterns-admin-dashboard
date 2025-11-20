@@ -35,6 +35,11 @@
     "contentDispositionType": "attachment",
     "remotePatterns": [
       {
+        "protocol": "http",
+        "hostname": "^(?:^(?:res\\.cloudinary\\.com)$)$",
+        "pathname": "^(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)\\/?)$"
+      },
+      {
         "protocol": "https",
         "hostname": "^(?:^(?:res\\.cloudinary\\.com)$)$",
         "pathname": "^(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)\\/?)$"

@@ -1,4 +1,3 @@
-// ==================== FILE: _components/PasswordForm.tsx ====================
 'use client'
 
 import React from 'react'
@@ -34,52 +33,28 @@ export function PasswordForm({
   const [showNewPassword, setShowNewPassword] = React.useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = React.useState(false)
 
-  const fields = [
-    {
-      id: 'oldPassword',
-      label: 'Current Password',
-      value: oldPassword,
-      setValue: setOldPassword,
-      show: showOldPassword,
-      setShow: setShowOldPassword,
-    },
-    {
-      id: 'newPassword',
-      label: 'New Password',
-      value: newPassword,
-      setValue: setNewPassword,
-      show: showNewPassword,
-      setShow: setShowNewPassword,
-    },
-    {
-      id: 'confirmPassword',
-      label: 'Confirm Password',
-      value: confirmPassword,
-      setValue: setConfirmPassword,
-      show: showConfirmPassword,
-      setShow: setShowConfirmPassword,
-    },
-  ]
-
   return (
-    <div className="space-y-6 max-w-md">
-      {fields.map((field) => (
-        <div key={field.id}>
-          <Label htmlFor={field.id}>{field.label}</Label>
+    <div className="space-y-12 max-w-full">
+      {/* --- FIRST TWO FIELDS IN GRID --- */}
+      <div className="grid grid-cols-2 gap-8">
+        {/* Current Password */}
+        <div className="space-y-3.5">
+          <Label htmlFor="oldPassword">Current Password</Label>
           <div className="relative mt-1">
             <Input
-              id={field.id}
-              type={field.show ? 'text' : 'password'}
-              value={field.value}
-              onChange={(e) => field.setValue(e.target.value)}
-              placeholder={`Enter ${field.label.toLowerCase()}`}
+              id="oldPassword"
+              type={showOldPassword ? 'text' : 'password'}
+              value={oldPassword}
+              onChange={(e) => setOldPassword(e.target.value)}
+              placeholder="Enter current password"
+              className="bg-[#EDF2F6] py-5"
             />
             <button
               type="button"
-              onClick={() => field.setShow(!field.show)}
+              onClick={() => setShowOldPassword(!showOldPassword)}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
             >
-              {field.show ? (
+              {showOldPassword ? (
                 <EyeOff className="w-4 h-4" />
               ) : (
                 <Eye className="w-4 h-4" />
@@ -87,13 +62,66 @@ export function PasswordForm({
             </button>
           </div>
         </div>
-      ))}
+
+        {/* New Password */}
+        <div className="space-y-3.5">
+          <Label htmlFor="newPassword">New Password</Label>
+          <div className="relative mt-1">
+            <Input
+              id="newPassword"
+              type={showNewPassword ? 'text' : 'password'}
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              placeholder="Enter new password"
+              className="bg-[#EDF2F6] py-5"
+            />
+            <button
+              type="button"
+              onClick={() => setShowNewPassword(!showNewPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+            >
+              {showNewPassword ? (
+                <EyeOff className="w-4 h-4" />
+              ) : (
+                <Eye className="w-4 h-4" />
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* --- CONFIRM PASSWORD FULL WIDTH --- */}
+      {/* <div className="space-y-3.5"> */}
+      <div className="space-y-3.5">
+        <Label htmlFor="confirmPassword">Confirm Password</Label>
+        <div className="relative mt-1">
+          <Input
+            id="confirmPassword"
+            type={showConfirmPassword ? 'text' : 'password'}
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            placeholder="Confirm new password"
+            className="bg-[#EDF2F6] py-5"
+          />
+          <button
+            type="button"
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+          >
+            {showConfirmPassword ? (
+              <EyeOff className="w-4 h-4" />
+            ) : (
+              <Eye className="w-4 h-4" />
+            )}
+          </button>
+        </div>
+      </div>
 
       <div className="flex gap-3 pt-4">
         <Button
           onClick={onSubmit}
           disabled={isUpdating}
-          className="min-w-[140px]"
+          className="min-w-[140px] bg-[#0C2661]"
         >
           {isUpdating ? (
             <>
@@ -106,7 +134,8 @@ export function PasswordForm({
         </Button>
         <Button
           type="button"
-          variant="outline"
+          className="border border-gray-300 rounded-sm font-normal text-gray-500"
+          variant="ghost"
           onClick={onReset}
           disabled={isUpdating}
         >

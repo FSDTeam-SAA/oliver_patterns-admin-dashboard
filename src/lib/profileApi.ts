@@ -9,7 +9,7 @@ export type UserProfile = {
   _id: string
   userId: string
   username?: string
-  fullName: string
+  name: string
   email: string
   bio?: string
   phoneNumber?: string
@@ -25,7 +25,7 @@ export interface ProfileResponse {
 }
 
 export interface UpdateProfileData {
-  fullName?: string
+  name?: string
   username?: string
   bio?: string
   phoneNumber?: string
@@ -50,7 +50,7 @@ export const useGetUserProfile = (accessToken: string) => {
   return useQuery<ProfileResponse>({
     queryKey: ['user-profile', accessToken],
     queryFn: async () => {
-      const res = await fetch(`${API_BASE_URL}/profile/me`, {
+      const res = await fetch(`${API_BASE_URL}/user/me`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -68,7 +68,7 @@ export const useUpdateProfile = (accessToken: string, options?: any) => {
 
   return useMutation({
     mutationFn: async (data: UpdateProfileData) => {
-      const res = await fetch(`${API_BASE_URL}/profile/update-profile/me`, {
+      const res = await fetch(`${API_BASE_URL}/user/me`, {
         method: 'PUT',
         credentials: 'include',
         headers: {
@@ -95,7 +95,7 @@ export const useUpdateProfileImage = (accessToken: string, options?: any) => {
 
   return useMutation({
     mutationFn: async (formData: FormData) => {
-      const res = await fetch(`${API_BASE_URL}/profile/update-profile-image`, {
+      const res = await fetch(`${API_BASE_URL}/user/upload-avatar`, {
         method: 'PUT',
         body: formData,
         credentials: 'include',

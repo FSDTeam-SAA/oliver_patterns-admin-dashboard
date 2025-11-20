@@ -1,7 +1,7 @@
 // ==================== FILE: app/admin-dashboard/contact-management/_components/RespondDialog.tsx ====================
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Dialog,
   DialogContent,
@@ -11,73 +11,53 @@ import {
   DialogFooter,
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
-import { Textarea } from '@/components/ui/textarea'
-import { Label } from '@/components/ui/label'
 import { Loader2 } from 'lucide-react'
-
 import { toast } from 'sonner'
 import { Contact } from '../../../../../types/contact'
+import { useUpdateContactStatus } from '@/lib/contactApi'
 
 interface RespondDialogProps {
   contact: Contact | null
   isOpen: boolean
+  accessToken: string
   onClose: () => void
-  onSuccess: (contactId: string) => void
+  onSuccess: () => void
 }
 
 export default function RespondDialog({
   contact,
   isOpen,
+  accessToken,
   onClose,
   onSuccess,
 }: RespondDialogProps) {
-  const [responseMessage, setResponseMessage] = useState('')
-  const [error, setError] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
+  const updateStatusMutation = useUpdateContactStatus(accessToken, {
+    onSuccess: () => {
+      toast.success('Marked as read successfully!')
+      onSuccess()
+    },
+    onError: (error) => {
+      toast.error(error.message || 'Failed to update status')
+    },
+  })
 
-  const handleSubmit = async () => {
-    if (!responseMessage.trim()) {
-      setError('Please enter a response message')
-      return
-    }
+  const handleMarkAsRead = () => {
+    if (!contact?._id) return
 
-    if (!contact?._id) {
-      setError('Invalid contact')
-      return
-    }
-
-    setIsLoading(true)
-
-    // Demo: Simulate API call
-    setTimeout(() => {
-      console.log('Response sent:', {
-        contactId: contact._id,
-        responseMessage: responseMessage.trim(),
-      })
-
-      toast.success('Response sent successfully!')
-      setResponseMessage('')
-      setError('')
-      setIsLoading(false)
-      onSuccess(contact._id)
-    }, 1000)
-  }
-
-  const handleClose = () => {
-    if (!isLoading) {
-      setResponseMessage('')
-      setError('')
-      onClose()
-    }
+    updateStatusMutation.mutate({
+      contactId: contact._id,
+      status: 'read',
+    })
   }
 
   return (
-    <Dialog open={isOpen} onOpenChange={handleClose}>
+    <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
-          <DialogTitle>Respond to Contact</DialogTitle>
+          <DialogTitle>Mark as Read</DialogTitle>
           <DialogDescription>
-            Send a response to {contact?.fullName}
+            This will update the status of this contact to <strong>read</strong>
+            .
           </DialogDescription>
         </DialogHeader>
 
@@ -87,7 +67,7 @@ export default function RespondDialog({
             <div className="grid grid-cols-2 gap-2 text-sm">
               <div>
                 <span className="text-gray-500">Name:</span>
-                <span className="ml-2 font-medium">{contact?.fullName}</span>
+                <span className="ml-2 font-medium">{contact?.name}</span>
               </div>
               <div>
                 <span className="text-gray-500">Email:</span>
@@ -95,36 +75,32 @@ export default function RespondDialog({
               </div>
               <div>
                 <span className="text-gray-500">Phone:</span>
-                <span className="ml-2 font-medium">{contact?.phoneNumber}</span>
+                <span className="ml-2 font-medium">{contact?.phone}</span>
               </div>
               <div>
-                <span className="text-gray-500">Occupation:</span>
-                <span className="ml-2 font-medium">{contact?.occupation}</span>
+                <span className="text-gray-500">Company:</span>
+                <span className="ml-2 font-medium">{contact?.companyName}</span>
               </div>
             </div>
+
+            <div className="pt-2 border-t">
+              <span className="text-gray-500 text-sm">Subject:</span>
+              <p className="text-sm mt-1 font-medium text-gray-700">
+                {contact?.subject}
+              </p>
+            </div>
+
             <div className="pt-2 border-t">
               <span className="text-gray-500 text-sm">Message:</span>
               <p className="text-sm mt-1 text-gray-700">{contact?.message}</p>
             </div>
           </div>
 
-          {/* Response Message Input */}
-          <div>
-            <Label htmlFor="responseMessage" className="text-sm font-medium">
-              Your Response *
-            </Label>
-            <Textarea
-              id="responseMessage"
-              placeholder="Enter your response message..."
-              value={responseMessage}
-              onChange={(e) => {
-                setResponseMessage(e.target.value)
-                setError('')
-              }}
-              className="mt-2 min-h-[120px]"
-              disabled={isLoading}
-            />
-            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+            <p className="text-sm text-blue-800">
+              Clicking <strong>Mark as Read</strong> will only update the
+              status. No email will be sent automatically.
+            </p>
           </div>
         </div>
 
@@ -132,19 +108,24 @@ export default function RespondDialog({
           <Button
             type="button"
             variant="outline"
-            onClick={handleClose}
-            disabled={isLoading}
+            onClick={onClose}
+            disabled={updateStatusMutation.isPending}
           >
             Cancel
           </Button>
-          <Button onClick={handleSubmit} disabled={isLoading}>
-            {isLoading ? (
+
+          <Button
+            className="bg-[#0C2661] hover:bg-[#0C2661]/90"
+            onClick={handleMarkAsRead}
+            disabled={updateStatusMutation.isPending}
+          >
+            {updateStatusMutation.isPending ? (
               <>
                 <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                Sending...
+                Updating...
               </>
             ) : (
-              'Send Response'
+              'Mark as Read'
             )}
           </Button>
         </DialogFooter>

@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Providers } from './providers'
 import { Toaster } from 'sonner'
+import TopLoader from 'nextjs-toploader'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -19,7 +20,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <body suppressHydrationWarning={true}>
-        <Providers>{children}</Providers>
+        {/* Top Loader */}
+        <TopLoader
+          color="#00BFFF"
+          shadow="0 0 10px #147575, 0 0 5px #147575"
+          showSpinner={false}
+          height={4}
+          easing="ease-in"
+        />
+        <div suppressContentEditableWarning>
+          <Providers>{children}</Providers>
+        </div>
         <Toaster position="top-right" />
       </body>
     </html>

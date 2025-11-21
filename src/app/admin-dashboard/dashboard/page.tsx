@@ -1,10 +1,8 @@
 import { auth } from '@/auth'
 import { redirect } from 'next/navigation'
-// import { ActiveUsers } from './_components/ActiveUsers'
-// import DashboardStats from './_components/StatsCard'
-// import { MessagesSection } from './_components/Contact'
+import DashboardPage from './_components/dashboardPage'
 
-export default async function DashboardPage() {
+export default async function page() {
   const session = await auth()
 
   if (!session?.user || session?.user?.role.toLowerCase() !== 'admin') {
@@ -12,7 +10,7 @@ export default async function DashboardPage() {
   }
 
   return (
-    <div className="space-y-8 ">
+    <div className="space-y-4">
       <DashboardPage />
     </div>
   )

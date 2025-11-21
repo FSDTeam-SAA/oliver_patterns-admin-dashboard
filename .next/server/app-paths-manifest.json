@@ -1,5 +1,6 @@
 {
   "/(auth)/signin/page": "app/(auth)/signin/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/admin-dashboard/calendar/page": "app/admin-dashboard/calendar/page.js",
   "/admin-dashboard/contact-management/page": "app/admin-dashboard/contact-management/page.js",
   "/admin-dashboard/dashboard/page": "app/admin-dashboard/dashboard/page.js",

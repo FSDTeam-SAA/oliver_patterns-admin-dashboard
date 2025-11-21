@@ -45,8 +45,8 @@ export default function RecentGrantsTable({ grants, isLoading }: Props) {
     <Card className="border shadow-sm">
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle className="text-lg font-semibold">Recent Grants</CardTitle>
-        <Link href="/admin-dashboard/grants">
-          <Button variant="link" className="text-blue-600 text-sm p-0">
+        <Link href="/admin-dashboard/grant-management">
+          <Button variant="link" className="text-[#0C2661] text-base p-0">
             See All
           </Button>
         </Link>
@@ -73,7 +73,7 @@ export default function RecentGrantsTable({ grants, isLoading }: Props) {
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                  <span className="text-sm font-medium text-[#0C2661] bg-blue-50 px-3 py-1 rounded-full">
                     {grant.funding}
                   </span>
                   <Button

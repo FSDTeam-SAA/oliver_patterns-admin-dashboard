@@ -26,28 +26,28 @@ export default function StatsCards({
       value: totalUsers.toLocaleString(),
       icon: Users,
       bgColor: 'bg-blue-50',
-      iconColor: 'text-blue-600',
+      iconColor: '#0C2661',
     },
     {
       title: 'Total Grants',
       value: totalGrants.toLocaleString(),
       icon: FileText,
-      bgColor: 'bg-green-50',
-      iconColor: 'text-green-600',
+      bgColor: 'bg-blue-50',
+      iconColor: '#0C2661',
     },
     {
       title: 'Revenue',
       value: `$${totalRevenue.toLocaleString()}`,
       icon: DollarSign,
-      bgColor: 'bg-purple-50',
-      iconColor: 'text-purple-600',
+      bgColor: 'bg-blue-50',
+      iconColor: '#0C2661',
     },
     {
       title: 'Active Subscriptions',
       value: activeSubscriptions.toLocaleString(),
       icon: UserCheck,
-      bgColor: 'bg-orange-50',
-      iconColor: 'text-orange-600',
+      bgColor: 'bg-blue-50',
+      iconColor: '#0C2661',
     },
   ]
 
@@ -69,12 +69,17 @@ export default function StatsCards({
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
       {stats.map((stat, idx) => (
-        <Card key={idx} className="border shadow-sm hover:shadow-md transition">
+        <Card
+          key={idx}
+          className="border hover:shadow-md transition rounded-md shadow"
+        >
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600 mb-1">{stat.title}</p>
-                <h3 className="text-2xl font-bold text-gray-900">
+                <p className="text-sm text-gray-600 font-medium mb-3">
+                  {stat.title}
+                </p>
+                <h3 className="text-3xl font-bold text-[#0C2661]">
                   {stat.value}
                 </h3>
               </div>

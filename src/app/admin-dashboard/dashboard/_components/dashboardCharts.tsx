@@ -78,9 +78,11 @@ export default function DashboardCharts({
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* User Growth Chart */}
-        <Card className="border shadow-sm">
+        <Card className="border shadow rounded">
           <CardHeader>
-            <CardTitle className="text-lg font-semibold">User Growth</CardTitle>
+            <CardTitle className="text-lg font-semibold text-[#0C2661]">
+              User Growth
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
@@ -106,9 +108,9 @@ export default function DashboardCharts({
                 <Line
                   type="monotone"
                   dataKey="userCount"
-                  stroke="#3b82f6"
+                  stroke="#0C2661"
                   strokeWidth={2}
-                  dot={{ fill: '#3b82f6', r: 4 }}
+                  dot={{ fill: '#ffffff', r: 4 }}
                   activeDot={{ r: 6 }}
                 />
               </LineChart>
@@ -117,9 +119,9 @@ export default function DashboardCharts({
         </Card>
 
         {/* Revenue Trend Chart */}
-        <Card className="border shadow-sm">
+        <Card className="border shadow-sm rounded">
           <CardHeader>
-            <CardTitle className="text-lg font-semibold">
+            <CardTitle className="text-lg font-semibold text-[#0C2661]">
               Revenue Trend
             </CardTitle>
           </CardHeader>
@@ -148,9 +150,9 @@ export default function DashboardCharts({
                 <Line
                   type="monotone"
                   dataKey="revenue"
-                  stroke="#10b981"
+                  stroke="#0C2661"
                   strokeWidth={2}
-                  dot={{ fill: '#10b981', r: 4 }}
+                  dot={{ fill: '#ffffff', r: 4 }}
                   activeDot={{ r: 6 }}
                 />
               </LineChart>

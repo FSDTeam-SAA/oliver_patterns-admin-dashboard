@@ -2,7 +2,7 @@ var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/admin-dashb
 R.c("server/chunks/ssr/2d19f_3984652f._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__e8a2741f._.js")
 R.c("server/chunks/ssr/oliverA_patterns_oliver_patterns-admin-dashboard_src_app_bb9eda09._.js")
-R.c("server/chunks/ssr/[root-of-the-server]__ece94f37._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__a467ad9d._.js")
 R.c("server/chunks/ssr/oliverA_patterns_oliver_patterns-admin-dashboard_src_app_not-found_tsx_e45770da._.js")
 R.c("server/chunks/ssr/2d19f_next_dist_client_components_b047abf1._.js")
 R.c("server/chunks/ssr/2d19f_next_dist_client_components_builtin_unauthorized_4674517f.js")

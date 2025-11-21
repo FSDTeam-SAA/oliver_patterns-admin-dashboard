@@ -33,15 +33,15 @@ export default function DashboardPage() {
   const growth = growthData?.data || []
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-full px-5 mx-auto pb-8">
         {/* Header */}
-        <div className="mb-6">
+        {/* <div className="mb-6">
           <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
           <p className="text-gray-600 mt-1">
             Welcome back! Here&apos;s what&apos;s happening today.
           </p>
-        </div>
+        </div> */}
 
         {/* Stats Cards */}
         <StatsCards

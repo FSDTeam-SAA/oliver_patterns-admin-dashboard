@@ -51,8 +51,8 @@ export default function RecentSubscribersTable({
         <CardTitle className="text-lg font-semibold">
           Recent Subscribers
         </CardTitle>
-        <Link href="/admin-dashboard/subscription/recent-transactions">
-          <Button variant="link" className="text-blue-600 text-sm p-0">
+        <Link href="/admin-dashboard/subscription/subscription">
+          <Button variant="link" className="text-[#0C2661] text-base p-0">
             See All
           </Button>
         </Link>
@@ -81,7 +81,7 @@ export default function RecentSubscribersTable({
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-sm font-medium capitalize px-3 py-1 rounded-full bg-blue-50 text-blue-600">
+                  <span className="text-sm font-medium capitalize px-3 py-1 rounded-full bg-blue-50 text-[#0C2661]">
                     {subscriber.planName} Plan
                   </span>
                   <span

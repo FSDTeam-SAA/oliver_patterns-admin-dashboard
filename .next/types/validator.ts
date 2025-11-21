@@ -131,6 +131,12 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   handler satisfies AppPageConfig<"/admin-dashboard/subscription/pricing-plan">
 }
 
+// Validate ../../src/app/admin-dashboard/subscription/recent-transactions/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/admin-dashboard/subscription/recent-transactions/page.js")
+  handler satisfies AppPageConfig<"/admin-dashboard/subscription/recent-transactions">
+}
+
 // Validate ../../src/app/admin-dashboard/user-management/page.tsx
 {
   const handler = {} as typeof import("../../src/app/admin-dashboard/user-management/page.js")

@@ -12,6 +12,7 @@ import { toast } from 'sonner'
 import PlanForm from './planForm'
 import PlanPreviewCard from './planPreview'
 import PlanTable from './planTable'
+import Link from 'next/link'
 
 export default function PlanManagement() {
   const [page, setPage] = useState(1)
@@ -82,12 +83,18 @@ export default function PlanManagement() {
           <CardContent className="p-4">
             <div className="mb-6">
               <div className="flex gap-4">
-                <button className="px-6 py-2 bg-[#0C2661] text-white rounded">
-                  Pricing Plans
-                </button>
-                <button className="px-4 py-2 border border-blue-900 rounded">
-                  Recent Transactions
-                </button>
+                <Link href={'/admin-dashboard/subscription/pricing-plan'}>
+                  <button className="px-6 py-2 bg-[#0C2661] hover:bg-[#0c2661]/90 text-white rounded cursor-pointer">
+                    Pricing Plans
+                  </button>
+                </Link>
+                <Link
+                  href={'/admin-dashboard/subscription/recent-transactions'}
+                >
+                  <button className="px-4 py-2 border border-blue-900 hover:bg-slate-200 rounded cursor-pointer">
+                    Recent Transactions
+                  </button>
+                </Link>
               </div>
             </div>
 

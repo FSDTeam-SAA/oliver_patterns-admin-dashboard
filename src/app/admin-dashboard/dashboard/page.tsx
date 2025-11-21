@@ -13,12 +13,7 @@ export default async function DashboardPage() {
 
   return (
     <div className="space-y-8 ">
-      {/* Scrollable Header */}
-      <header className="space-y-6 max-h-screen pr-2">
-        {/* <DashboardStats /> */}
-        {/* <ActiveUsers />
-        <MessagesSection /> */}
-      </header>
+      <DashboardPage />
     </div>
   )
 }

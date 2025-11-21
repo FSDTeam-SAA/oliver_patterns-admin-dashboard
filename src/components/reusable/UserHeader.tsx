@@ -29,6 +29,11 @@ export default function UserHeader() {
         'Grant Calendar',
         'Keep track of your saved grants and important deadlines at a glance.',
       ]
+    if (pathname.includes('/admin-dashboard/subscription/recent-transactions'))
+      return [
+        'Transactions Management',
+        'Manage transactions and view transaction history.',
+      ]
 
     if (pathname.includes('/admin-dashboard/subscription'))
       return [

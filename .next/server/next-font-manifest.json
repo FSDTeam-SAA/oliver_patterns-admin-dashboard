@@ -1,31 +1,6 @@
 {
-  "app": {
-    "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/calendar/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
-    ],
-    "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/contact-management/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
-    ],
-    "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/dashboard/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
-    ],
-    "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/grant-management/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
-    ],
-    "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/settings/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
-    ],
-    "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/subscription/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
-    ],
-    "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/subscription/pricing-plan/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
-    ],
-    "[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/admin-dashboard/user-management/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
-    ]
-  },
-  "appUsingSizeAdjust": true,
+  "app": {},
+  "appUsingSizeAdjust": false,
   "pages": {},
   "pagesUsingSizeAdjust": false
 }

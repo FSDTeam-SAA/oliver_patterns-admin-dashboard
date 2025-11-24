@@ -57,12 +57,12 @@ export default function DashboardCharts({
   return (
     <div className="mb-6">
       {/* Year Filter */}
-      <div className="flex justify-end mb-4">
+      <div className="flex justify-end mb-4 mt-8">
         <Select
           value={selectedYear.toString()}
           onValueChange={(value) => onYearChange(Number(value))}
         >
-          <SelectTrigger className="w-32">
+          <SelectTrigger className="w-52">
             <SelectValue placeholder="Select year" />
           </SelectTrigger>
           <SelectContent>

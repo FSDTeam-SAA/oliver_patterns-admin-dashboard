@@ -110,7 +110,9 @@ export default function UserTable({
               <th className="px-6 py-4 text-center text-sm font-medium text-gray-600 uppercase">
                 Plan Type
               </th>
-
+              <th className="px-6 py-4 text-center text-sm font-medium text-gray-600 uppercase">
+                Joined
+              </th>
               <th className="px-6 py-4 text-center text-sm font-medium text-gray-600 uppercase">
                 Role
               </th>
@@ -136,6 +138,15 @@ export default function UserTable({
 
                 <td className="px-6 py-3 text-center capitalize">
                   {user.planName}
+                </td>
+                <td className="px-6 py-3 text-center capitalize">
+                  {user.createdAt
+                    ? new Date(user.createdAt).toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: '2-digit',
+                        year: 'numeric',
+                      })
+                    : ''}
                 </td>
 
                 <td className="px-6 py-3 text-center capitalize">

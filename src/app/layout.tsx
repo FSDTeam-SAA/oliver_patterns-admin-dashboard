@@ -22,7 +22,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}>
         {/* Top Loader */}
         <TopLoader
-          color="#00BFFF"
+          color="#78dcf5"
           shadow="0 0 10px #147575, 0 0 5px #147575"
           showSpinner={false}
           height={4}

@@ -20,6 +20,21 @@ export interface RecentGrant {
   deadline: string
 }
 
+export interface GrantDetails {
+  _id: string
+  title: string
+  type: string
+  funding: string
+  deadline: string
+  status: string
+  location: string
+  industry: string
+  activity: string
+  description: string
+  imageUrl?: string
+  fileUrls?: string[]
+}
+
 export interface RecentSubscriber {
   _id: string
   name: string
@@ -43,6 +58,12 @@ export interface OverviewResponse {
   status: boolean
   message: string
   data: OverviewData
+}
+
+export interface GrantDetailsResponse {
+  status: boolean
+  message: string
+  data: GrantDetails
 }
 
 const API_BASE_URL =
@@ -75,5 +96,23 @@ export const useGetDashboardOverview = (accessToken: string) => {
       return res.json()
     },
     enabled: !!accessToken,
+  })
+}
+
+// ---------- GET GRANT DETAILS ----------
+export const useGetGrantDetails = (
+  grantId: string | null,
+  accessToken: string
+) => {
+  return useQuery<GrantDetailsResponse>({
+    queryKey: ['grantDetails', grantId],
+    queryFn: async () => {
+      const res = await fetch(`${API_BASE_URL}/grant/${grantId}`, {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      })
+      if (!res.ok) throw new Error('Failed to fetch grant details')
+      return res.json()
+    },
+    enabled: !!accessToken && !!grantId,
   })
 }

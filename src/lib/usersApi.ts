@@ -38,6 +38,7 @@ export interface User {
   address: Address
   isActive: boolean
   username?: string
+  createdAt?: string
 }
 
 export interface PaginationInfo {

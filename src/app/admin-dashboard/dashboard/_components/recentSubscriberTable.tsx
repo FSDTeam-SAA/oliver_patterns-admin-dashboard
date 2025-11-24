@@ -51,7 +51,7 @@ export default function RecentSubscribersTable({
         <CardTitle className="text-lg font-semibold">
           Recent Subscribers
         </CardTitle>
-        <Link href="/admin-dashboard/subscription/subscription">
+        <Link href="/admin-dashboard/subscription/pricing-plan">
           <Button variant="link" className="text-[#0C2661] text-base p-0">
             See All
           </Button>

@@ -76,7 +76,7 @@ export default function StatsCards({
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600 font-medium mb-3">
+                <p className="text-base text-gray-600 font-medium mb-3">
                   {stat.title}
                 </p>
                 <h3 className="text-3xl font-bold text-[#0C2661]">

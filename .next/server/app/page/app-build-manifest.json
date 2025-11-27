@@ -1,27 +1,21 @@
 {
   "pages": {
     "/page": [
-      "static/chunks/2d19f_next_dist_09c0efd4._.js",
-      "static/chunks/3221e_patterns_oliver_patterns-admin-dashboard_src_app_favicon_ico_mjs_30e16740._.js",
-      "static/chunks/[root-of-the-server]__9eea4186._.css",
-      "static/chunks/2d19f_367b7838._.js",
-      "static/chunks/oliverA_patterns_oliver_patterns-admin-dashboard_src_app_providers_tsx_6695a142._.js",
-      "static/chunks/oliverA_patterns_oliver_patterns-admin-dashboard_src_app_layout_tsx_3047e1ae._.js",
-      "static/chunks/2d19f_ee8e904e._.js",
-      "static/chunks/oliverA_patterns_oliver_patterns-admin-dashboard_src_db0a4b67._.js",
-      "static/chunks/oliverA_patterns_oliver_patterns-admin-dashboard_src_app_not-found_tsx_23ff5581._.js",
-      "static/chunks/2d19f_next_dist_client_components_builtin_global-error_23ff5581.js",
-      "static/chunks/oliverA_patterns_oliver_patterns-admin-dashboard_4de1da04._.js",
-      "static/chunks/oliverA_patterns_oliver_patterns-admin-dashboard_src_app_page_tsx_23ff5581._.js",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_bc6656f9._.js",
-      "static/chunks/2d19f_next_dist_compiled_react-dom_65171354._.js",
-      "static/chunks/2d19f_next_dist_compiled_next-devtools_index_70ca39d7.js",
-      "static/chunks/2d19f_next_dist_compiled_7c574ad2._.js",
-      "static/chunks/2d19f_next_dist_client_326a2322._.js",
-      "static/chunks/2d19f_next_dist_a4b48f07._.js",
-      "static/chunks/2d19f_@swc_helpers_cjs_812366ff._.js",
-      "static/chunks/oliverA_patterns_oliver_patterns-admin-dashboard_a0ff3932._.js",
-      "static/chunks/turbopack-oliverA_patterns_oliver_patterns-admin-dashboard_daca263c._.js"
+      "static/chunks/ff1a16fafef87110.js",
+      "static/chunks/6a7993b07cb97bb3.js",
+      "static/chunks/f5cba554b4c9d336.css",
+      "static/chunks/81b5551f60f0a6e1.js",
+      "static/chunks/b281b7b8c19103f6.js",
+      "static/chunks/77ab7f9cdcd0799a.js",
+      "static/chunks/cb1ef19a94764d3c.js",
+      "static/chunks/e9990fd871272e73.js",
+      "static/chunks/fd18bde29eb63805.js",
+      "static/chunks/a4ca42fdbda659e2.js",
+      "static/chunks/522518d740397639.js",
+      "static/chunks/7810da4988c46acd.js",
+      "static/chunks/811c82e360775988.js",
+      "static/chunks/47a465164401cb79.js",
+      "static/chunks/turbopack-a1db408730bc47c1.js"
     ]
   }
 }

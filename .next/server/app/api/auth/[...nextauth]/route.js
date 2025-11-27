@@ -1,10 +1,6 @@
 var R=require("../../../../chunks/[turbopack]_runtime.js")("server/app/api/auth/[...nextauth]/route.js")
-R.c("server/chunks/2d19f_next_dfef16d8._.js")
-R.c("server/chunks/2d19f_next-auth_1c2ee2d7._.js")
-R.c("server/chunks/2d19f_openid-client_29ccea7d._.js")
-R.c("server/chunks/2d19f_jose_dist_node_cjs_a869dd36._.js")
-R.c("server/chunks/2d19f_369b5a23._.js")
-R.c("server/chunks/[root-of-the-server]__c47f39bc._.js")
-R.m("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/.next-internal/server/app/api/auth/[...nextauth]/route/actions.js [app-rsc] (server actions loader, ecmascript)")
-R.m("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/api/auth/[...nextauth]/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
-module.exports=R.m("[project]/oliverA_patterns/oliver_patterns-admin-dashboard/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/oliverA_patterns/oliver_patterns-admin-dashboard/src/app/api/auth/[...nextauth]/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports
+R.c("server/chunks/[root-of-the-server]__d4b81ec1._.js")
+R.c("server/chunks/node_modules_6ee95af8._.js")
+R.m(43433)
+R.m(3413)
+module.exports=R.m(3413).exports

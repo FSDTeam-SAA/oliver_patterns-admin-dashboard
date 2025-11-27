@@ -47,111 +47,111 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 }
 
 
-// Validate ../../src/app/(auth)/forgot-password/page.tsx
+// Validate ..\..\src\app\(auth)\forgot-password\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/(auth)/forgot-password/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\(auth)\\forgot-password\\page.js")
   handler satisfies AppPageConfig<"/forgot-password">
 }
 
-// Validate ../../src/app/(auth)/reset-password/page.tsx
+// Validate ..\..\src\app\(auth)\reset-password\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/(auth)/reset-password/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\(auth)\\reset-password\\page.js")
   handler satisfies AppPageConfig<"/reset-password">
 }
 
-// Validate ../../src/app/(auth)/signin/page.tsx
+// Validate ..\..\src\app\(auth)\signin\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/(auth)/signin/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\(auth)\\signin\\page.js")
   handler satisfies AppPageConfig<"/signin">
 }
 
-// Validate ../../src/app/(auth)/verify-email/page.tsx
+// Validate ..\..\src\app\(auth)\verify-email\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/(auth)/verify-email/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\(auth)\\verify-email\\page.js")
   handler satisfies AppPageConfig<"/verify-email">
 }
 
-// Validate ../../src/app/admin-dashboard/calendar/page.tsx
+// Validate ..\..\src\app\admin-dashboard\calendar\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/admin-dashboard/calendar/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\admin-dashboard\\calendar\\page.js")
   handler satisfies AppPageConfig<"/admin-dashboard/calendar">
 }
 
-// Validate ../../src/app/admin-dashboard/contact-management/page.tsx
+// Validate ..\..\src\app\admin-dashboard\contact-management\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/admin-dashboard/contact-management/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\admin-dashboard\\contact-management\\page.js")
   handler satisfies AppPageConfig<"/admin-dashboard/contact-management">
 }
 
-// Validate ../../src/app/admin-dashboard/dashboard/page.tsx
+// Validate ..\..\src\app\admin-dashboard\dashboard\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/admin-dashboard/dashboard/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\admin-dashboard\\dashboard\\page.js")
   handler satisfies AppPageConfig<"/admin-dashboard/dashboard">
 }
 
-// Validate ../../src/app/admin-dashboard/grant-management/add/page.tsx
+// Validate ..\..\src\app\admin-dashboard\grant-management\add\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/admin-dashboard/grant-management/add/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\admin-dashboard\\grant-management\\add\\page.js")
   handler satisfies AppPageConfig<"/admin-dashboard/grant-management/add">
 }
 
-// Validate ../../src/app/admin-dashboard/grant-management/edit/[id]/page.tsx
+// Validate ..\..\src\app\admin-dashboard\grant-management\edit\[id]\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/admin-dashboard/grant-management/edit/[id]/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\admin-dashboard\\grant-management\\edit\\[id]\\page.js")
   handler satisfies AppPageConfig<"/admin-dashboard/grant-management/edit/[id]">
 }
 
-// Validate ../../src/app/admin-dashboard/grant-management/page.tsx
+// Validate ..\..\src\app\admin-dashboard\grant-management\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/admin-dashboard/grant-management/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\admin-dashboard\\grant-management\\page.js")
   handler satisfies AppPageConfig<"/admin-dashboard/grant-management">
 }
 
-// Validate ../../src/app/admin-dashboard/page.tsx
+// Validate ..\..\src\app\admin-dashboard\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/admin-dashboard/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\admin-dashboard\\page.js")
   handler satisfies AppPageConfig<"/admin-dashboard">
 }
 
-// Validate ../../src/app/admin-dashboard/settings/page.tsx
+// Validate ..\..\src\app\admin-dashboard\settings\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/admin-dashboard/settings/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\admin-dashboard\\settings\\page.js")
   handler satisfies AppPageConfig<"/admin-dashboard/settings">
 }
 
-// Validate ../../src/app/admin-dashboard/subscription/page.tsx
+// Validate ..\..\src\app\admin-dashboard\subscription\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/admin-dashboard/subscription/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\admin-dashboard\\subscription\\page.js")
   handler satisfies AppPageConfig<"/admin-dashboard/subscription">
 }
 
-// Validate ../../src/app/admin-dashboard/subscription/pricing-plan/page.tsx
+// Validate ..\..\src\app\admin-dashboard\subscription\pricing-plan\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/admin-dashboard/subscription/pricing-plan/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\admin-dashboard\\subscription\\pricing-plan\\page.js")
   handler satisfies AppPageConfig<"/admin-dashboard/subscription/pricing-plan">
 }
 
-// Validate ../../src/app/admin-dashboard/subscription/recent-transactions/page.tsx
+// Validate ..\..\src\app\admin-dashboard\subscription\recent-transactions\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/admin-dashboard/subscription/recent-transactions/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\admin-dashboard\\subscription\\recent-transactions\\page.js")
   handler satisfies AppPageConfig<"/admin-dashboard/subscription/recent-transactions">
 }
 
-// Validate ../../src/app/admin-dashboard/user-management/page.tsx
+// Validate ..\..\src\app\admin-dashboard\user-management\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/admin-dashboard/user-management/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\admin-dashboard\\user-management\\page.js")
   handler satisfies AppPageConfig<"/admin-dashboard/user-management">
 }
 
-// Validate ../../src/app/page.tsx
+// Validate ..\..\src\app\page.tsx
 {
-  const handler = {} as typeof import("../../src/app/page.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\page.js")
   handler satisfies AppPageConfig<"/">
 }
 
-// Validate ../../src/app/api/auth/[...nextauth]/route.ts
+// Validate ..\..\src\app\api\auth\[...nextauth]\route.ts
 {
-  const handler = {} as typeof import("../../src/app/api/auth/[...nextauth]/route.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\api\\auth\\[...nextauth]\\route.js")
   handler satisfies RouteHandlerConfig<"/api/auth/[...nextauth]">
 }
 
@@ -159,14 +159,14 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 
 
 
-// Validate ../../src/app/admin-dashboard/layout.tsx
+// Validate ..\..\src\app\admin-dashboard\layout.tsx
 {
-  const handler = {} as typeof import("../../src/app/admin-dashboard/layout.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\admin-dashboard\\layout.js")
   handler satisfies LayoutConfig<"/admin-dashboard">
 }
 
-// Validate ../../src/app/layout.tsx
+// Validate ..\..\src\app\layout.tsx
 {
-  const handler = {} as typeof import("../../src/app/layout.js")
+  const handler = {} as typeof import("..\\..\\src\\app\\layout.js")
   handler satisfies LayoutConfig<"/">
 }
